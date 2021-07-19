@@ -1,0 +1,24 @@
+.container{
+  display: block;
+}
+
+.HomePage{
+  background: #FFFFFF;
+}
+
+.newSection{
+  width: 72%;
+  padding: 1rem 2.5rem;
+  display: inline-block;
+}
+
+.recommnendSection{
+  width: 28%;
+  padding: 1rem 2.5rem;
+  display: inline-block;
+}
+
+.newSection h3{
+  display: block;
+  font-size: 1.75rem;
+}

@@ -1,0 +1,126 @@
+.LoginPage{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.LoginPage .logo{
+    position: absolute;
+    left: 5%;
+    top: 3rem;
+}
+
+.LoginPage > .d-flex{
+    flex-direction: row;
+    justify-content: unset;
+    width: 100%;
+    height: 100%;
+    padding-top: 4rem;
+}
+.LoginPage .d-flex .login-image{
+    width: 60%;
+    padding: 2rem;
+}
+
+.LoginPage .d-flex .login-form{
+    width: 40%;
+}
+
+.LoginPage .d-flex .login-form > div{
+    width: fit-content;
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    border: 10px solid;
+    padding: 4rem 3rem;
+    border-image-slice: 1;
+    border-width: 3px;
+    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+    
+}
+
+.LoginPage .d-flex .login-form div .title{
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin: 1.5rem 0;
+}
+
+.LoginPage .d-flex .login-form div .subtitle{
+    color: #7c8798;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+}
+
+.LoginPage .d-flex .login-image img{
+    width: 100%;
+    height: auto;
+}
+
+.LoginPage .d-flex .login-form-input{
+    padding: .875rem 1.25rem;
+    justify-content: unset;
+}
+
+.LoginPage .d-flex .login-form-input label{
+    color: #a7a770;
+    margin-bottom: .375rem;
+    display: block;
+}
+
+.LoginPage .d-flex .login-form-input input{
+   border: 0;
+   outline: none;
+   font-size: 1rem;
+}
+
+.LoginPage .d-flex .login-form-input input:focus{
+    border: 0;
+}
+
+
+.LoginPage .d-flex .login-form-input .input_icon{
+    margin-right: 1rem;
+}
+
+.LoginPage .d-flex .login-form-input .input_input{
+    flex: 1;
+}
+
+.LoginPage .d-flex .login-form-input .input_input input{
+    width: 100%;
+}
+
+
+.LoginPage .d-flex div .checkbox input{
+    margin-right: .5rem;
+}
+
+.LoginPage .d-flex div .loginBtn{
+    margin-top: 2rem;
+    width: fit-content;
+}
+
+.LoginPage .d-flex div .loginBtn a{
+    display: block;
+    background: #0e69e1;
+    color: #fff;
+    padding: .75rem 2rem;
+    border-radius: 1.5rem;
+}
+
+.LoginPage .d-flex div .loginMedia{
+    position: relative;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.LoginPage .d-flex div .loginMedia::after{
+    content: "";
+    width: 60%;
+    height: 1px;
+    background: #333;
+    top: 0;
+    left: 20%;
+    position: absolute;
+}

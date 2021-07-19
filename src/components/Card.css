@@ -1,0 +1,97 @@
+.card{
+    width: 100%;
+    margin-left: -.5rem;
+    max-width: 1000px;
+    position: relative;
+    padding: 2.5rem .75rem;
+    border-bottom: 1px solid rgba(0, 0, 0, .8);
+}
+
+.card .card-title{
+    display: flex;
+    flex-direction: row;
+}
+
+.card .card-title div:nth-of-type(2){
+    flex: 1;
+}
+
+.card .card-title .card-title-image{
+    margin-right: 1.5rem;
+}
+
+.card .card-title .roundedImage {
+    width: 64px;
+    height: 64px;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.card .card-title .card-title-title > div{
+    flex: 1 1;
+    
+}
+
+.card .card-title .card-title-title a{
+    color: #04009A;
+    padding: .875rem 3rem;
+    border: 2px solid;
+    border-image-slice: 1;
+    display: block;
+    border-image-source: linear-gradient(to right, #04009A, #77ACF1);
+    font-size: .875rem;
+}
+
+.card .card-title .card-title-title div span{
+    display: block;
+}
+
+.card .card-title .card-title-title div span:nth-of-type(1){
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+.card-title-image{
+
+}
+
+.card .card-body{
+    display: flex;
+}
+
+.card .card-body .videoInteraction{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: calc(64px + 1.5rem);
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+
+.card .card-body .videoInteraction div{
+    text-align: center;
+    margin-bottom: .75rem;
+}
+
+.card .card-body .videoInteraction div span{
+    display: block;
+}
+
+.card .card-body .videoInteraction div img{
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
+.card .card-body .video{
+    flex: 1 1;
+    padding-top: 1rem;
+}
+
+.card .card-body .video video{
+    width: 100%;
+    height: auto;
+
+}
