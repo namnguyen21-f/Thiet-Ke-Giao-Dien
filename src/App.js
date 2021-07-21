@@ -51,7 +51,7 @@ function App() {
           </Route>
           <Route path="/binhchon">
             <NavigationWrapper>
-              
+              <Home></Home>
             </NavigationWrapper>
           </Route>
           <Route path="/following">

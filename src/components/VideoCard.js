@@ -2,11 +2,11 @@
 import LikeIcon from '../image/LikedIcon.svg';
 import CommentIcon from '../image/CommentIcon.svg';
 import ShareIcon from '../image/ShareIcon.svg';
-import './Card.css';
+import './VideoCard.css';
 //title : string, subtitle: string, descripton: Componet for more dec, 
 //  likeNumber, commentNumber, shareNumber : string
 //  onClickHandle : card on Click
-const VideoCard = ({title,subtitle, descripton, likeNumber, commentNumber, shareNumber ,onClickHandle}) => {
+export default function VideoCard ({id, title,subtitle, descripton, likeNumber, commentNumber, shareNumber, isfollow ,onClickHandle , onFollowHandle}) {
     return (
         <div key={title} className="card" 
             onClick={() => {
@@ -23,7 +23,7 @@ const VideoCard = ({title,subtitle, descripton, likeNumber, commentNumber, share
                             <span className="title">{title}</span>
                             {subtitle && <span className="subtitle">{subtitle}</span>}
                         </div>
-                        <a>Follow</a>
+                        <a onClick={(event) => {onFollowHandle(event,id)}}>{isfollow ? "Followed" : "Follow"}</a>
                     </div>
                     {descripton && 
                         <div className="card-title-descripton">
@@ -54,7 +54,3 @@ const VideoCard = ({title,subtitle, descripton, likeNumber, commentNumber, share
         </div>
     )
 }
-
-
-
-export {VideoCard};
