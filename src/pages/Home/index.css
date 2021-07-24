@@ -7,14 +7,14 @@
 }
 
 .newSection{
-  width: 72%;
+  width: 70%;
   padding: 1rem 2.5rem;
   display: inline-block;
 }
 
 .recommnendSection{
-  width: 28%;
-  padding: 1rem 2.5rem;
+  width: 30%;
+  padding: 1rem 1.0rem;
   display: inline-block;
 }
 

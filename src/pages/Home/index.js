@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from '@material-ui/core';
 import './index.css'
 import VideoCard from '../../components/VideoCard';
+import VideoCard2 from '../../components/VideoCard2';
 //
 
 
@@ -23,6 +24,21 @@ const newSectionData = [
         commentNumber: "2.9k",
         shareNumber: "24.9k",
         isfollow: true,
+    },
+]
+
+const newrecommnendData = [
+    {
+        id: "1",
+        title: "NickSeven",
+        subtitle: "Thích ăn chuối aaaaaa quá trời quá đất luôn",
+        time: "5 phút trước"
+    },
+    {
+        id: "1",
+        title: "NickOne",
+        subtitle: "Thích ăn chơm chơm",
+        time: "20 phút trước"
     },
 ]
 
@@ -61,8 +77,12 @@ export default class Home extends React.Component{
                         return <VideoCard {...item} onFollowHandle={this.followHandleClick}/>
                     })}
                 </div>
+                
                 <div className="recommnendSection">
-
+                    <h3>Đề xuất</h3>
+                    {newrecommnendData.map((item) => {
+                        return <VideoCard2 {...item} onFollowHandle={this.followHandleClick}/>
+                    })}
                 </div> 
             </Container>    
         )
