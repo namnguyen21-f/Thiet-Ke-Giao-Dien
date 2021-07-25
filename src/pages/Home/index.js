@@ -25,9 +25,59 @@ const newSectionData = [
         shareNumber: "24.9k",
         isfollow: true,
     },
+
+    {
+        id: "1",
+        title: "Nguyen Nam Heh",
+        subtitle: "Hôm nay như tui vui quá đi thôi",
+        likeNumber: "991.9k",
+        commentNumber: "2.9k",
+        shareNumber: "24.9k",
+        isfollow: false,
+    },
+    {
+        id: "2",
+        title: "Nguyen Phuc",
+        subtitle: "Hôm nay như tui vui quá đi thôi",
+        likeNumber: "991.9k",
+        commentNumber: "2.9k",
+        shareNumber: "24.9k",
+        isfollow: true,
+    },
+
+    {
+        id: "1",
+        title: "Nguyen Nam Heh",
+        subtitle: "Hôm nay như tui vui quá đi thôi",
+        likeNumber: "991.9k",
+        commentNumber: "2.9k",
+        shareNumber: "24.9k",
+        isfollow: false,
+    },
+    {
+        id: "2",
+        title: "Nguyen Phuc",
+        subtitle: "Hôm nay như tui vui quá đi thôi",
+        likeNumber: "991.9k",
+        commentNumber: "2.9k",
+        shareNumber: "24.9k",
+        isfollow: true,
+    },
 ]
 
 const newrecommnendData = [
+    {
+        id: "1",
+        title: "NickSeven",
+        subtitle: "Thích ăn chuối aaaaaa quá trời quá đất luôn",
+        time: "5 phút trước"
+    },
+    {
+        id: "1",
+        title: "NickOne",
+        subtitle: "Thích ăn chơm chơm",
+        time: "20 phút trước"
+    },
     {
         id: "1",
         title: "NickSeven",

@@ -1,10 +1,8 @@
 .cardView{
-    width: 100%;
-    margin-left: -.5rem;
-    max-width: 1000px;
-    position: relative;
-    padding: 2.5rem .75rem;
-    border-bottom: 1px solid rgba(0, 0, 0, .8);
+    border: 2px solid;
+    border-image-source: solid rgba(0, 0, 0, .8);
+    cursor: pointer;
+    margin-bottom: 10%;
 }
 
 .cardView .card-title{
@@ -24,6 +22,9 @@
     width: 38px;
     height: 38px;
     border: 1px solid rgba(0, 0, 0, .2);
+    left: 40px;
+    top: 20px;
+    position: relative;
 }
 
 .cardView .card-row {
@@ -39,18 +40,23 @@
     font-size: 1.0rem;
     font-weight: 600;
     margin-bottom: .9rem;
+    left: 50px;
+    top: 20px;
+    position: relative;
 }
 
 .cardView .card-row .card-time-time {
     width: 80%;
     font-size: 0.775rem;
-    position: absolute;
-    left: 200px;
+    left: 230px;
+    top: -10px;
+    position: relative;
 }
 
 .cardView .card-subtitle {
     font-size: 1.0rem;
     width: 100%;
+    margin-top: 2%;
     float: right;
 }
 
