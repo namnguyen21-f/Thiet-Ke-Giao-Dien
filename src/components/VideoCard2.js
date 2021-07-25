@@ -8,7 +8,7 @@ import './VideoCard2.css';
 //  onClickHandle : card on Click
 export default function VideoCard2 ({id, title, subtitle, onClickHandle, time}) {
     return (
-        <div key={title} className="card" 
+        <div key={title} className="cardView" 
             onClick={() => {
                 if (onClickHandle) onClickHandle();
             }

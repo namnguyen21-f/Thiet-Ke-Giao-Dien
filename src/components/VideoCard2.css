@@ -1,4 +1,4 @@
-.card{
+.cardView{
     width: 100%;
     margin-left: -.5rem;
     max-width: 1000px;
@@ -7,33 +7,33 @@
     border-bottom: 1px solid rgba(0, 0, 0, .8);
 }
 
-.card .card-title{
+.cardView .card-title{
     display: flex;
     flex-direction: row;
 }
 
-.card .card-title div:nth-of-type(2){
+.cardView .card-title div:nth-of-type(2){
     flex: 1;
 }
 
-.card .card-title .card-title-image{
+.cardView .card-title .card-title-image{
     margin-right: 0.5rem;
 }
 
-.card .card-title .roundedImage {
+.cardView .card-title .roundedImage {
     width: 38px;
     height: 38px;
     border: 1px solid rgba(0, 0, 0, .2);
 }
 
-.card .card-row {
+.cardView .card-row {
     content: "";
     display: table;
     clear: both;
     position: relative;
 }
 
-.card .card-row .card-title-title {
+.cardView .card-row .card-title-title {
     float: left;
     width: 80%;
     font-size: 1.0rem;
@@ -41,25 +41,25 @@
     margin-bottom: .9rem;
 }
 
-.card .card-row .card-time-time {
+.cardView .card-row .card-time-time {
     width: 80%;
     font-size: 0.775rem;
     position: absolute;
     left: 200px;
 }
 
-.card .card-subtitle {
+.cardView .card-subtitle {
     font-size: 1.0rem;
     width: 100%;
     float: right;
 }
 
 
-.card .card-body{
+.cardView .card-body{
     display: flex;
 }
 
-.card .card-body .videoInteraction{
+.cardView .card-body .videoInteraction{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -70,27 +70,27 @@
 }
 
 
-.card .card-body .videoInteraction div{
+.cardView .card-body .videoInteraction div{
     text-align: center;
     margin-bottom: .75rem;
 }
 
-.card .card-body .videoInteraction div span{
+.cardView .card-body .videoInteraction div span{
     display: block;
 }
 
-.card .card-body .videoInteraction div img{
+.cardView .card-body .videoInteraction div img{
     width: 40px;
     height: 40px;
     display: block;
 }
 
-.card .card-body .video{
+.cardView .card-body .video{
     flex: 1 1;
     padding-top: 1rem;
 }
 
-.card .card-body .video video{
+.cardView .card-body .video video{
     width: 100%;
     height: auto;
 }
