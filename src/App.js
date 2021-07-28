@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
 import { Fragment } from 'react';
 import './App.css';
+import VideoPage from './pages/Video';
 
 
 //title: title of link, path: destination
@@ -62,6 +63,11 @@ function App() {
           <Route path="/livestream">
             <NavigationWrapper>
               
+            </NavigationWrapper>
+          </Route>
+          <Route path="/video/:id">
+            <NavigationWrapper>
+              <VideoPage></VideoPage>
             </NavigationWrapper>
           </Route>
         </Switch>

@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import { Container } from '@material-ui/core';
 import './index.css'
 import VideoCard from '../../components/VideoCard';
 import VideoCard2 from '../../components/VideoCard2';
+import useIntersectionObserver from '@react-hook/intersection-observer';
 //
-
 
 const newSectionData = [
     {
@@ -14,55 +14,14 @@ const newSectionData = [
         likeNumber: "991.9k",
         commentNumber: "2.9k",
         shareNumber: "24.9k",
+        viewNumber: "24.9k",
         isfollow: false,
-    },
-    {
-        id: "2",
-        title: "Nguyen Phuc",
-        subtitle: "Hôm nay như tui vui quá đi thôi",
-        likeNumber: "991.9k",
-        commentNumber: "2.9k",
-        shareNumber: "24.9k",
-        isfollow: true,
-    },
-
-    {
-        id: "1",
-        title: "Nguyen Nam Heh",
-        subtitle: "Hôm nay như tui vui quá đi thôi",
-        likeNumber: "991.9k",
-        commentNumber: "2.9k",
-        shareNumber: "24.9k",
-        isfollow: false,
-    },
-    {
-        id: "2",
-        title: "Nguyen Phuc",
-        subtitle: "Hôm nay như tui vui quá đi thôi",
-        likeNumber: "991.9k",
-        commentNumber: "2.9k",
-        shareNumber: "24.9k",
-        isfollow: true,
-    },
-
-    {
-        id: "1",
-        title: "Nguyen Nam Heh",
-        subtitle: "Hôm nay như tui vui quá đi thôi",
-        likeNumber: "991.9k",
-        commentNumber: "2.9k",
-        shareNumber: "24.9k",
-        isfollow: false,
-    },
-    {
-        id: "2",
-        title: "Nguyen Phuc",
-        subtitle: "Hôm nay như tui vui quá đi thôi",
-        likeNumber: "991.9k",
-        commentNumber: "2.9k",
-        shareNumber: "24.9k",
-        isfollow: true,
-    },
+        videoData: {
+            poster: 'https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg',
+            url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+            type: "video/mp4"
+        }
+    }
 ]
 
 const newrecommnendData = [
@@ -92,6 +51,20 @@ const newrecommnendData = [
     },
 ]
 
+const LazyLoading = (props) => {
+    const containerRef = useRef();
+    const lockRef = useRef(false);
+    const { isIntersecting } = useIntersectionObserver(containerRef);
+    if (isIntersecting && !lockRef.current) {
+        lockRef.current = true
+    }
+    return (
+        <div ref={containerRef}>
+            {lockRef.current && props.children}
+        </div>
+    )
+}
+
 export default class Home extends React.Component{
     constructor(props) {
         super(props);
@@ -114,7 +87,7 @@ export default class Home extends React.Component{
             this.state.newSectionData[index].isfollow = true;
         }
         this.setState({newSectionData: this.state.newSectionData});
-        console.log("Done");
+        
     }
 
 
@@ -124,7 +97,11 @@ export default class Home extends React.Component{
                 <div className="newSection">
                     <h3>Mới</h3>
                     {newSectionData.map((item) => {
-                        return <VideoCard {...item} onFollowHandle={this.followHandleClick}/>
+                        return (
+                            <LazyLoading>
+                                <VideoCard {...item} onFollowHandle={this.followHandleClick}/>
+                            </LazyLoading>
+                        )
                     })}
                 </div>
                 

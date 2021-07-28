@@ -22,8 +22,8 @@ const gererateOptions = (props) => {
 // title : string, subtitle: string, descripton: Componet for more dec, 
 //  likeNumber, commentNumber, shareNumber : string
 //  onClickHandle : card on Click
-export default function VideoCard ({id, title,subtitle, descripton, likeNumber, commentNumber, shareNumber, viewNumber, 
-        videoData, isfollow ,onClickHandle , onFollowHandle}) {
+export default function VideoCard3 ({id, title,subtitle, descripton, likeNumber, commentNumber, shareNumber, viewNumber, 
+        videoData, isfollow ,onClickHandle , onFollowHandle, refI}) {
     const [isPlay , setIsPlay] = useState(false);
     const videoViewRef = useRef(null);
     const onPlayHandle = () => {
@@ -31,7 +31,7 @@ export default function VideoCard ({id, title,subtitle, descripton, likeNumber, 
     }
 
     return (
-        <div key={title} className="card" 
+        <div ref={refI} key={title} className="card" 
             onClick={() => {
                 if (onClickHandle) onClickHandle();
             }
@@ -46,7 +46,6 @@ export default function VideoCard ({id, title,subtitle, descripton, likeNumber, 
                             <span className="title">{title}</span>
                             {subtitle && <span className="subtitle">{subtitle}</span>}
                         </div>
-                        <a onClick={(event) => {onFollowHandle(event,id)}}>{isfollow ? "Followed" : "Follow"}</a>
                     </div>
                     {descripton && 
                         <div className="card-title-descripton">
@@ -56,20 +55,6 @@ export default function VideoCard ({id, title,subtitle, descripton, likeNumber, 
                 </div>
             </div>
             <div className="card-body">
-                <div className="videoInteraction">
-                    <div>
-                        <img src={LikeIcon}></img>
-                        <span>{likeNumber}</span>
-                    </div>
-                    <div>
-                        <img src={CommentIcon}></img>
-                        <span>{commentNumber}</span>
-                    </div>
-                    <div>
-                        <img src={ShareIcon}></img>
-                        <span>{shareNumber}</span>
-                    </div>
-                </div>
                 <div className="video">
                     <VideoJS onPlayHandle={() => {onPlayHandle()}} options={gererateOptions(videoData)}></VideoJS>
                     <div ref={videoViewRef} className="videoView">

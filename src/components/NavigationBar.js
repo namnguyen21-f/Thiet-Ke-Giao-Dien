@@ -2,6 +2,7 @@ import {Fragment,useState} from 'react';
 import './NavigationBar.css';
 import {Link} from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search';
+import MenuIcon from '@material-ui/icons/Menu';
 
 //isVertical navigationbar direction is vertical
 // data for navBar
@@ -10,6 +11,7 @@ import SearchIcon from '@material-ui/icons/Search';
 //sub {title,path}
 
 export default function NavigationBar({navData}){
+    const [isMenuClick , setIsMenuClick] = useState(false);
     return(
         <div className="navBar">
             <div className="row">
@@ -33,9 +35,24 @@ export default function NavigationBar({navData}){
                 </div>
                 <div className="row">
                     <a id="postBtn">Tải lên</a>
-                    <a id="loginBtn">Đăng nhập</a>
+                    <Link id="loginBtn" to="/login">Đăng nhập</Link>
+                    <div className="menu" onClick={() => {setIsMenuClick(!isMenuClick)}}>
+                        <MenuIcon></MenuIcon>
+                    </div>     
                 </div>
             </div>
+            {isMenuClick && <div className="mobileNav">
+                <div className="navContainer">
+                    <ul className="d-flex">
+                        <li><Link to="/login">Đăng nhập</Link></li>
+                        {navData.map((item,index) => {
+                            return (
+                                <li><Link to={item.path}>{item.title}</Link></li>
+                            )
+                        })}
+                    </ul>
+                </div>
+            </div>}
         </div>
     )
 }

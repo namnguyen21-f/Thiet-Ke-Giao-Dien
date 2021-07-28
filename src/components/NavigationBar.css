@@ -3,6 +3,7 @@
     width: 100%;
     box-shadow: 0 3px 9px 0 rgb(162 176 190 / 15%);
     margin-bottom: 3px;
+    position: relative;
 }
 
 .navBar > .row{
@@ -17,19 +18,19 @@
     background: -webkit-linear-gradient(-45deg,#0F0C9A, #77ACF1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    
 }
 
 .navBar .navContainer{
-    padding: .5rem 1rem;
+    padding: .5rem .75rem;
 }
 
 .navBar .navContainer ul{
     list-style-type: none;
+    justify-content: space-between;
 }
 
 .navBar .navContainer ul li{
-    padding: .5rem 2.5rem;
+    padding: .5rem 1.25rem;
     text-align: center;
 }
 
@@ -45,10 +46,11 @@
     font-weight: 540;
 }
 
-.navBar .searchBar{
+.navBar .searchBar{ 
     padding: .5rem 1rem;
     position: relative;
 }
+
 
 .navBar .searchBar::after{
     position: absolute;
@@ -77,6 +79,97 @@
 .navBar #postBtn{
     padding: 1.25rem 1.75rem;
     margin-right: 1rem;
+}
+
+.navBar .menu{
+    display: none;
+}
+
+.mobileNav{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: fit-content;
+    padding: .25rem;
+    background: #fff;
+    z-index: 99 !important;
+    box-shadow: 0 12px 28px 0 rgba(0, 0, 0, .2),0 2px 4px 0 rgba(0, 0, 0, .1),inset 0 0 0 1px rgba(255, 255, 255, .5);
+}
+
+.navBar .row .row{
+    flex-wrap: nowrap;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+    .navBar .navContainer{
+        display: none;
+    }
+    .navBar #loginBtn{
+        display: none;
+    }
+    
+    .navBar #postBtn{
+        display: none;
+    }
+
+    .navBar .menu{
+        display: block;
+    }
+    
+
+    .mobileNav .navContainer{
+        display: block !important;
+    }
+
+    .mobileNav .navContainer ul{
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: .25rem;
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .navBar .navContainer ul li{
+        padding: .5rem .75rem;
+    }
+    .navBar #loginBtn{ 
+        padding: 1rem 1.25rem;
+    }
+    
+    .navBar #postBtn{
+        padding: 1rem 1.25rem;
+        display: none;
+    }
+
+    .navBar .searchBar input{
+        max-width: 80px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .navBar .navContainer ul li{
+        padding: .5rem 1.5rem;
+    }
+    .navBar #loginBtn{ 
+        padding: 1rem 1.25rem;
+    }
+    
+    .navBar #postBtn{
+        padding: 1rem 1.25rem;
+    }
+    
+    .navBar .searchBar input{
+        max-width: 100px;
+    }
+    
+}
+
+@media only screen and (min-width: 1200px) {
+   
+    .navBar .navContainer {
+        flex: 1;
+    }
 }
 
 

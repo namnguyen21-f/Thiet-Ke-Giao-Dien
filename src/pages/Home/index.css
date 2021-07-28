@@ -4,21 +4,57 @@
 
 .HomePage{
   background: #FFFFFF;
+  display: flex !important;
+  flex-direction: row;
 }
 
 .newSection{
   width: 70%;
   padding: 1rem 2.5rem;
-  display: inline-block;
+
 }
 
 .recommnendSection{
   width: 30%;
   padding: 1rem 1.0rem;
-  display: inline-block;
+ 
 }
 
 .newSection h3{
   display: block;
   font-size: 1.75rem;
+  margin-bottom: -1rem
 }
+
+@media (min-width: 320px) and (max-device-width: 992px) {
+  .HomePage .newSection{
+    width: 100%;
+    padding: .25rem;
+  }
+
+
+  .HomePage .recommnendSection{
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-device-width: 992px) {
+  .HomePage .newSection{
+    width: 100%;
+    padding: .25rem;
+  }
+
+
+  .HomePage .recommnendSection{
+    width: 100%;
+  }
+}
+
+@media (min-device-width: 992px) and (max-device-width: 1200px) {
+  
+}
+
+@media (min-width: 1200px) {
+  
+}
+
