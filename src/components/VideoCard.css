@@ -1,0 +1,171 @@
+.card{
+    width: 100%;
+    margin-left: -.5rem;
+    max-width: 1000px;
+    position: relative;
+    padding: 2.5rem .75rem;
+    border-bottom: 1px solid rgba(0, 0, 0, .8);
+}
+
+.card .card-title{
+    display: flex;
+    flex-direction: row;
+}
+
+.card .card-title div:nth-of-type(2){
+    flex: 1;
+}
+
+.card .card-title .card-title-image{
+    margin-right: 1.5rem;
+}
+
+.card .card-title .roundedImage {
+    width: 64px;
+    height: 64px;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.card .card-title .card-title-title > div{
+    flex: 1 1;
+    
+}
+
+.card .card-title .card-title-title a{
+    color: #04009A;
+    padding: .875rem 3rem;
+    border: 2px solid;
+    border-image-slice: 1;
+    display: block;
+    border-image-source: linear-gradient(to right, #04009A, #77ACF1);
+    font-size: .875rem;
+    cursor: pointer;
+}
+
+.card .card-title .card-title-title div span{
+    display: block;
+}
+
+.card .card-title .card-title-title div span:nth-of-type(1){
+    font-size: 1.375rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+
+.card .card-body{
+    display: flex;
+}
+
+.card .card-body .videoInteraction{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: calc(64px + 1.5rem);
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+
+.card .card-body .videoInteraction div{
+    text-align: center;
+    margin-bottom: .75rem;
+}
+
+.card .card-body .videoInteraction div span{
+    display: block;
+}
+
+.card .card-body .videoInteraction div img{
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+}
+
+.card .card-body .video{
+    flex: 1 1;
+    padding-top: 1rem;
+    position: relative;
+}
+
+.card .card-body .video video{
+    width: 100%;
+    height: auto;
+}
+
+.card .card-body .video .videoView{
+    position: absolute;
+    bottom: 1rem;
+    left: 3rem;
+    height: 2rem;
+    padding: 0 .25rem;
+    background: rgba(255, 255, 255, 0.5) !important;
+    line-height: 2rem;
+}
+
+.card-title-descripton{
+    width: 100%;
+}
+
+@media (min-width: 320px) and (max-device-width: 992px) {
+
+    .card{
+        padding: 3rem .5rem;   
+    }
+
+    .card .card-body .videoInteraction div img{
+        width: 20px;
+        height: 20px;
+        display: block; 
+    }
+
+    .card .card-title .card-title-image{
+        margin-right: .5rem;
+    }
+
+    .card .card-title .card-title-image .roundedImage{
+        width: 40px;
+        height: 40px;
+    }
+
+    .card .card-body .videoInteraction{
+        width: calc(40px + .5rem);
+    }
+
+    .card .card-title .card-title-title a{
+        padding: .5rem 2rem;
+    }
+    
+}
+  
+@media (min-width: 768px) and (max-device-width: 992px) {
+
+}
+
+@media (min-device-width: 992px) and (max-device-width: 1200px) {
+.card .card-body .videoInteraction div img{
+        width: 30px;
+        height: 30px;
+        display: block; 
+    }
+
+    .card .card-title .card-title-image{
+        margin-right: .875rem;
+    }
+
+    .card .card-title .card-title-image .roundedImage{
+        width: 50px;
+        height: 50px;
+    }
+
+    .card .card-body .videoInteraction{
+        width: calc(50px + .875rem);
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+}

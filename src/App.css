@@ -1,0 +1,32 @@
+.App .navSection{
+  width: 100%;
+}
+
+.App .MainSection{
+  width: 100%;
+}
+
+
+@media (min-width: 320px) {
+  html{
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  html{
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 992px) {
+  html{
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1200px) {
+  html{
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,50 @@
+.container{
+  display: block;
+}
+
+.HomePage{
+  background: #FFFFFF;
+}
+
+.newSection{
+  width: 72%;
+  padding: 1rem 2.5rem;
+  display: inline-block;
+}
+
+.recommnendSection{
+  width: 28%;
+  padding: 1rem 2.5rem;
+  display: inline-block;
+}
+
+.newSection h3{
+  display: block;
+  font-size: 1.75rem;
+  margin-bottom: -1rem
+}
+
+@media (min-width: 320px) and (max-device-width: 992px) {
+  .HomePage .newSection{
+    width: 100%;
+    padding: .25rem;
+  }
+
+
+  .HomePage .recommnendSection{
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-device-width: 992px) {
+  
+}
+
+@media (min-device-width: 992px) and (max-device-width: 1200px) {
+  
+}
+
+@media (min-width: 1200px) {
+  
+}
+

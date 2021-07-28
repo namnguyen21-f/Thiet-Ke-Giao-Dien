@@ -1,0 +1,22 @@
+.StockPage{
+    background: #f9fbfd;
+}
+
+.StockPage .page-breadcrumb .optionCustom select{
+    padding: .875rem 1rem;
+    font-size: 1.125rem;
+}
+  
+.StockPage .page-breadcrumb .row{
+    align-items: center;
+    justify-content: space-between;
+}
+  
+
+.StockPage .table-section{
+    padding: 2rem 2.5rem 0;
+}
+
+.StockPage .table-section .table-main .table-header tr th{
+    color: #fff !important;
+}
