@@ -30,9 +30,6 @@ export default function VideoCarousel ({videoArray, header,onPlayHandle}) {
             setSelectedIndex(0);
             setSelected(videoArray[0]);
             setOffSet(0);
-            videoArray.map((ele,idx) =>{
-                carouselItemsRef[idx].current = useRef(null);
-            })
         }
     }, [videoArray]);
 
