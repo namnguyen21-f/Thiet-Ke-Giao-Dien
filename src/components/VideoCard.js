@@ -12,6 +12,12 @@ const gererateOptions = (props) => {
         controls: true,
         responsive: true,
         fluid: true,
+        controlBar:{
+            children: [
+                'playToggle',
+                'muteToggle',
+            ]
+        },
         poster: props.poster ,
         sources: [{
           src: props.url,
@@ -78,7 +84,7 @@ export default function VideoCard ({id, title,subtitle, descripton, likeNumber, 
                 </div>
                 <Link to={`/video/${id}`} className="video">
                     <VideoJS onPlayHandle={() => {onPlayHandle()}} options={gererateOptions(videoData)}></VideoJS>
-                    <div ref={videoViewRef} className="videoView d-flex" >
+                    <div ref={videoViewRef} className="videoView" >
                         <span>{viewNumber}</span>
                     </div>    
                 </Link>
