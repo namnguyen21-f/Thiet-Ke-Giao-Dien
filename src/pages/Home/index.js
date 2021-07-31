@@ -21,6 +21,21 @@ const newSectionData = [
             url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
             type: "video/mp4"
         }
+    },
+    {
+        id: "2",
+        title: "Nguyen Nam Hehee",
+        subtitle: "Hôm nay như tui vui quá đi thôi",
+        likeNumber: "991.9k",
+        commentNumber: "2.9k",
+        shareNumber: "24.9k",
+        viewNumber: "24.9k",
+        isfollow: false,
+        videoData: {
+            poster: 'https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg',
+            url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+            type: "video/mp4"
+        }
     }
 ]
 

@@ -13,7 +13,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 export default function NavigationBar({navData}){
     const [isMenuClick , setIsMenuClick] = useState(false);
     return(
-        <div className="navBar">
+        <div className="navBar" sticky="top">
             <div className="row">
                 <div className="row">
                     <div className="logo">

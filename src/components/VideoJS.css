@@ -72,17 +72,19 @@ e.g. <video class="video-js my-skin-name">
     /* Start hidden */
     display: none;
     position: absolute;
+    background-color: red;
     /* Place control bar at the bottom of the player box/video. 
        If you want more margin below the control bar, add more height. */
     bottom: 0;
+
     /* Use left/right to stretch to 100% width of player div */
     left: 0;
     right: 0;
     /* Height includes any margin you want above or below control items */
-    height: 3em;
+    height: 20em;
     /* background-color-with-alpha */
-    background-color: #333;
-    background-color: rgba(51, 51, 51, 0.7);
+    /* background-color: rgb(233, 23, 23); */
+    /* background-color: rgba(51, 51, 51, 0.7); */
   }
   /* General styles for individual controls. */
   .vjs-default-skin .vjs-control {
@@ -134,7 +136,7 @@ e.g. <video class="video-js my-skin-name">
   /* Play/Pause
   --------------------------------------------------------------------------------
   */
-  .vjs-default-skin .vjs-play-control {
+  .vjs-default-skin .selected .vjs-play-control {
     width: 5em;
     cursor: pointer;
   }
@@ -146,10 +148,10 @@ e.g. <video class="video-js my-skin-name">
   }
   /* Volume/Mute
   -------------------------------------------------------------------------------- */
-  .vjs-default-skin .vjs-mute-control,
+
   .vjs-default-skin .vjs-volume-menu-button {
     cursor: pointer;
-    float: right;
+    float: left;
   }
   .vjs-default-skin .vjs-mute-control:before,
   .vjs-default-skin .vjs-volume-menu-button:before {
@@ -683,6 +685,11 @@ e.g. <video class="video-js my-skin-name">
     opacity: 1;
     visibility: visible;
   }
+  
+ .video-js   .vjs-control-bar{background: none; font-size: 201%;}
+ .video-js   .vjs-mute-control{color: white;position: absolute;
+ right: 1em;}
+       
   /* ----------------------------------------------------------------------------- 
   The original source of this file lives at 
   https://github.com/videojs/video.js/blob/master/src/css/video-js.less */

@@ -4,6 +4,7 @@
     box-shadow: 0 3px 9px 0 rgb(162 176 190 / 15%);
     margin-bottom: 3px;
     position: relative;
+    
 }
 
 .navBar > .row{
@@ -49,24 +50,19 @@
 .navBar .searchBar{ 
     padding: .5rem 1rem;
     position: relative;
+    border: 1px solid #a4a1e4;
+    border-radius: 5px;
+    background-color: #a4a1e4;
 }
 
-
-.navBar .searchBar::after{
-    position: absolute;
-    content: "";
-    bottom: .375rem;
-    width: calc(100% - 2rem);
-    height: 1px;
-    background-color: #000000;
-}
 
 .navBar .searchBar input{
     border: 0;
     outline: none;
-    color: rgba(0, 0, 0, .6);
+    color: rgba(0, 0, 0, 0.6);
     font-size: 1rem;
     line-height: 1.2;
+    background-color: #a4a1e4;
 }
 
 .navBar #loginBtn{
