@@ -59,6 +59,18 @@
     flex-wrap: wrap;
     align-items: center;
   }
+
+  .ml2{
+    margin-left: 1rem !important;
+  }
+
+  .ml3{
+    margin-left: 1.5rem !important;
+  }
+
+  .ml325{
+    margin-left: 3.25rem !important;
+  }
   
   .mr1{
     margin-right: .5rem !important;

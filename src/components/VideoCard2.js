@@ -1,12 +1,31 @@
 
-import LikeIcon from '../image/LikedIcon.svg';
-import CommentIcon from '../image/CommentIcon.svg';
-import ShareIcon from '../image/ShareIcon.svg';
+import {Link} from 'react-router-dom';
+import { useState , useRef } from 'react';
+import VideoJS from './VideoJS';
 import './VideoCard2.css';
+
+const gererateOptions = (props) => {
+    const videoJsOptions = { 
+        controls: true,
+        responsive: true,
+        fluid: true,
+        poster: props.poster ,
+        sources: [{
+          src: props.url,
+          type: props.type,
+        }]
+    }
+    return videoJsOptions;    
+}
 //title : string, subtitle: string, descripton: Componet for more dec, 
 //  likeNumber, commentNumber, shareNumber : string
 //  onClickHandle : card on Click
-export default function VideoCard2 ({id, title, subtitle, onClickHandle, time}) {
+export default function VideoCard2 ({id, title, subtitle, onClickHandle,viewNumber, 
+    videoData, time}) {
+    const videoViewRef = useRef(null);
+    const onPlayHandle = () => {
+        videoViewRef.current.removeChild(videoViewRef.current.children[0]);
+    }
     return (
         <div key={title} className="cardView" 
             onClick={() => {
@@ -38,10 +57,12 @@ export default function VideoCard2 ({id, title, subtitle, onClickHandle, time}) 
                 </div>
             </div>
             <div className="card-body">
-                <div className="video">
-                    <video controls src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                     poster="https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg"></video>
-                </div>
+                <Link to={`/video/${id}`} className="video">
+                    <VideoJS onPlayHandle={() => {onPlayHandle()}} options={gererateOptions(videoData)}></VideoJS>
+                    <div ref={videoViewRef} className="videoView" >
+                        <span>{viewNumber}</span>
+                    </div>    
+                </Link>
             </div>
         </div>
     )

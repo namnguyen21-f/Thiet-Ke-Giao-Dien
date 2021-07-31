@@ -29,25 +29,49 @@ const newrecommnendData = [
         id: "1",
         title: "NickSeven",
         subtitle: "Thích ăn chuối aaaaaa quá trời quá đất luôn",
-        time: "5 phút trước"
+        time: "5 phút trước",
+        viewNumber: "24.9k",
+        videoData: {
+            poster: 'https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg',
+            url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+            type: "video/mp4"
+        }
     },
     {
-        id: "1",
+        id: "2",
         title: "NickOne",
         subtitle: "Thích ăn chơm chơm",
-        time: "20 phút trước"
+        time: "20 phút trước",
+        viewNumber: "24.9k",
+        videoData: {
+            poster: 'https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg',
+            url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+            type: "video/mp4"
+        }
     },
     {
-        id: "1",
+        id: "3",
         title: "NickSeven",
         subtitle: "Thích ăn chuối aaaaaa quá trời quá đất luôn",
-        time: "5 phút trước"
+        time: "5 phút trước",
+        viewNumber: "24.9k",
+        videoData: {
+            poster: 'https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg',
+            url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+            type: "video/mp4"
+        }
     },
     {
-        id: "1",
+        id: "4",
         title: "NickOne",
         subtitle: "Thích ăn chơm chơm",
-        time: "20 phút trước"
+        time: "20 phút trước",
+        viewNumber: "24.9k",
+        videoData: {
+            poster: 'https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg',
+            url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+            type: "video/mp4"
+        }
     },
 ]
 

@@ -85,6 +85,7 @@
 }
 
 .card .card-body .video{
+    display: block;
     flex: 1 1;
     padding-top: 1rem;
     position: relative;

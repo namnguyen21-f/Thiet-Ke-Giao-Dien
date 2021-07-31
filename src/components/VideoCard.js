@@ -5,6 +5,8 @@ import ShareIcon from '../image/ShareIcon.svg';
 import './VideoCard.css';
 import VideoJS from './VideoJS';
 import { useState , useRef } from 'react';
+import {Link} from 'react-router-dom';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 const gererateOptions = (props) => {
     const videoJsOptions = { 
         controls: true,
@@ -28,6 +30,10 @@ export default function VideoCard ({id, title,subtitle, descripton, likeNumber, 
     const videoViewRef = useRef(null);
     const onPlayHandle = () => {
         videoViewRef.current.removeChild(videoViewRef.current.children[0]);
+    }
+
+    const videoPlayClick = (event) =>{
+        event.preventDefault();
     }
 
     return (
@@ -70,12 +76,12 @@ export default function VideoCard ({id, title,subtitle, descripton, likeNumber, 
                         <span>{shareNumber}</span>
                     </div>
                 </div>
-                <div className="video">
+                <Link to={`/video/${id}`} className="video">
                     <VideoJS onPlayHandle={() => {onPlayHandle()}} options={gererateOptions(videoData)}></VideoJS>
-                    <div ref={videoViewRef} className="videoView">
+                    <div ref={videoViewRef} className="videoView d-flex" >
                         <span>{viewNumber}</span>
                     </div>    
-                </div>
+                </Link>
             </div>
         </div>
     )

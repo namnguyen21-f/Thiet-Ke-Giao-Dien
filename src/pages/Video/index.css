@@ -1,22 +1,31 @@
 .VideoPage{
-    display: flex;
     padding: 2rem 0;
+    display: flex !important;
+    flex-direction: row;
 }
 
-.videoSection{
-    width: 60%;
+.VideoPage .videoSection{
+    flex: 1 1;
 }
 
-.videoSection .carousel-container{
+.VideoPage .recommendContainer{
+    width: 20%;
+    max-width: calc(350px + 4rem);
+    margin-left: 4rem;
+    padding: 0 1rem;
+}
+
+
+.videoSection .video-container{
     width: 100%;
 }
 
-.videoSection .carousel-container .selected{
+.videoSection .video-container .selected{
     position: relative;
     width: 100%;
 }
 
-.videoSection .carousel-container .selected .backBtn{
+.videoSection .video-container .selected .backBtn{
     display: block;
     position: absolute;
     top: .75rem;
@@ -28,15 +37,15 @@
     cursor: pointer;
 }
 
-.videoSection .carousel-container .selected .backBtn:hover{
+.videoSection .video-container .selected .backBtn:hover{
     background: rgba(255, 255, 255, .8);
 }
 
-.videoSection .carousel-container .selected .backBtn svg{
+.videoSection .video-container .selected .backBtn svg{
     display: block;
 }
 
-.videoSection .carousel-container .selected .logo{
+.videoSection .video-container .selected .logo{
     display: block;
     position: absolute;
     right: 1rem;
@@ -45,13 +54,13 @@
     height: 2.5rem;
 }
 
-.videoSection .carousel-container .selected .logo img{
+.videoSection .video-container .selected .logo img{
     width: 100%;
     height: 100%;
 
 }
 
-.videoSection .carousel-container .selected .reportBtn{
+.videoSection .video-container .selected .reportBtn{
     position: absolute;
     right: 5rem;
     top: .75rem;
@@ -66,56 +75,61 @@
     transition: .5s;
 }
 
-.videoSection .carousel-container .selected .reportBtn:hover{
+.videoSection .video-container .selected .reportBtn:hover{
     background: rgba(255, 255, 255, .8);
     color: rgba(0, 0, 0, 1);
 }
 
-.videoSection .carousel-container .carousel{
+.videoSection .video-container .carousel{
     width: 100%;
     position: relative;
+    overflow: hidden;
 }
 
-.videoSection .carousel-container .carousel .carousel__nav{
-    width: 100%;
+.videoSection .video-container .carousel .carousel__nav a{
+    color: unset;
+}
+
+.videoSection .video-container .carousel .carousel__nav{
+    
     display: flex;
     flex-wrap: nowrap;
-    overflow: hidden;
     padding: 1rem 0;
     transition: .5s ease-in-out all;
 }
 
-.videoSection .carousel-container .carousel .carousel__nav .card{
+.videoSection .video-container .carousel .carousel__nav .card{
    width: 300px;
    flex-shrink: 0;
    border: 0;
    padding: .75rem;
    cursor: pointer;
+   margin-left: 0;
 }
 
 
-.videoSection .carousel-container .carousel .carousel__nav .card .card-title-image{
+.videoSection .video-container .carousel .carousel__nav .card .card-title-image{
     margin-right: .5rem;
 }
-.videoSection .carousel-container .carousel .carousel__nav .card .card-title-image div{
+.videoSection .video-container .carousel .carousel__nav .card .card-title-image div{
     width: 40px;
     height: 40px;
 }
 
-.videoSection .carousel-container .carousel .carousel__nav .card .card-title-title .title{
+.videoSection .video-container .carousel .carousel__nav .card .card-title-title .title{
     font-size: 1rem;
     margin-bottom: .25rem;
 }
 
-.videoSection .carousel-container .carousel .carousel__nav .card .card-title-title .subtitle{
+.videoSection .video-container .carousel .carousel__nav .card .card-title-title .subtitle{
     font-size: .75rem;
 }
 
-.videoSection .carousel-container .carousel .carousel__nav .card .card-title-title .video{
+.videoSection .video-container .carousel .carousel__nav .card .card-title-title .video{
     padding-top: .75rem;
 }
 
-.videoSection .carousel-container .carousel__button{
+.videoSection .video-container .carousel__button{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -126,10 +140,169 @@
     border: 0;
 }
 
-.videoSection .carousel-container .carousel__button-left{
+.videoSection .video-container .carousel__button-left{
     left: .25rem;
 }
 
 .carousel__button-right{
-    right: .25rem;
+    right: 0rem;
+}
+
+
+.VideoPage .commentContainer{
+    width: 100%;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(0, 0, 0, .2);
+    padding: 2rem 0;
+}
+
+.VideoPage .commentContainer .videoinf{
+    display: flex;
+    margin-bottom: 1.25rem;
+}
+
+.VideoPage .commentContainer .videoinf .roundedImage{
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 1px solid rgba(0, 0, 0, .2);
+    margin-right: .75rem;
+}
+
+.VideoPage .commentContainer .commentSection .commentItem .title,.videoinf .d-flex .title{
+    display: block;
+    color: #333;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.VideoPage .commentContainer .commentSection .commentItem .subtitle,.videoinf .d-flex .subtitle{
+    display: block;
+    color: #333;
+    font-weight: 400;
+    font-size: .875rem;
+}
+
+.VideoPage .commentContainer .commentSection .commentItem.nestedItem .roundedImage{
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+}
+
+.VideoPage .commentContainer .commentSection .commentItem.mainItem{
+    margin-bottom: 1rem;
+}
+
+.VideoPage .commentContainer .commentSection .commentItem{
+    display: flex;
+    margin-bottom: .75rem;
+}
+
+.VideoPage .commentContainer .commentSection .commentItem .d-flex{
+    justify-content: unset;
+}
+
+.VideoPage .commentContainer .commentSection .commentItem .roundedImage{ 
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid rgba(0, 0, 0, .2);
+    margin-right: .75rem;
+}
+
+.VideoPage .commentContainer .commentSection .commentItem .d-flex.commentItem__info img{
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+
+.VideoPage .commentContainer .commentSection .commentItem  .commentItem__content img{
+    padding: .5rem 0;
+}
+
+.VideoPage .commentContainer .commentSection .commentItem  .commentItem__content .subtitle{
+    margin-bottom: .5rem;
+}
+
+.VideoPage .commentContainer .commentSection .commentItem .gif{
+    max-width: 300px;
+    height: auto;
+}
+
+/**/
+
+.VideoPage .videoSection .videoDes {
+    margin-top: 1rem;
+}
+
+.VideoPage .videoSection .videoDes .tag{
+    color: #065fd4;
+    font-size: .875rem;
+}
+
+.VideoPage .videoSection .videoDes span{
+    display: block;
+}
+
+.VideoPage .videoSection .videoDes .title{
+    font-weight: 600;
+    font-family: sans-serif;
+    line-height: 2rem;
+    color: #212121;
+}
+
+.VideoPage .videoSection .videoDes .description{
+    color: #606060;
+    margin-top: 1rem;
+}
+
+.VideoPage .commentContainer .userComment .d-flex{
+    align-items: unset;
+}
+
+.VideoPage .commentContainer .userComment form{
+    display: block;
+    padding: 1rem 1rem;
+    border-radius: .875rem;
+    background: #E5E5E5;
+}
+
+
+.VideoPage .commentContainer .userComment .roundedImage{
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 1px solid rgba(0, 0, 0, .2);
+    margin-right: .75rem;
+    
+    
+}
+
+.VideoPage .commentContainer .userComment form{
+    flex: 1;
+}
+
+
+.VideoPage .commentContainer .userComment form div{
+    width: 100%;
+}
+
+.VideoPage .commentContainer .userComment form img{
+    display: block;
+    max-width: 300px;
+}
+
+.VideoPage .commentContainer .userComment .commentOption{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 1.25rem;
+}
+
+.VideoPage .commentContainer .userComment .commentOption button{
+    margin-left: .75rem;
+}
+
+.VideoPage .recommendContainer .cardView{
+    border: 0 !important;
+}
+
+.VideoPage .recommendContainer .cardView .subtitle{
+    font-size: .75rem;
 }

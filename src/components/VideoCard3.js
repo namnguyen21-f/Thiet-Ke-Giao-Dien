@@ -31,7 +31,7 @@ export default function VideoCard3 ({id, title,subtitle, descripton, likeNumber,
     }
 
     return (
-        <div ref={refI} key={title} className="card" 
+        <div  key={id} className="card" 
             onClick={() => {
                 if (onClickHandle) onClickHandle();
             }

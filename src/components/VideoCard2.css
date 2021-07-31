@@ -2,7 +2,8 @@
     border: 2px solid;
     border-image-source: solid rgba(0, 0, 0, .8);
     cursor: pointer;
-    margin-bottom: 10%;
+    padding: .75rem .5rem;
+    margin-bottom: 3rem;
 }
 
 .cardView .card-title{
@@ -10,9 +11,6 @@
     flex-direction: row;
 }
 
-.cardView .card-title div:nth-of-type(2){
-    flex: 1;
-}
 
 .cardView .card-title .card-title-image{
     margin-right: 0.5rem;
@@ -22,47 +20,40 @@
     width: 38px;
     height: 38px;
     border: 1px solid rgba(0, 0, 0, .2);
-    left: 40px;
-    top: 20px;
-    position: relative;
 }
 
 .cardView .card-row {
-    content: "";
-    display: table;
-    clear: both;
-    position: relative;
+    display: flex;
+    justify-content: space-between;
 }
 
 .cardView .card-row .card-title-title {
-    float: left;
-    width: 80%;
     font-size: 1.0rem;
     font-weight: 600;
-    margin-bottom: .9rem;
-    left: 50px;
-    top: 20px;
-    position: relative;
+    flex-shrink: 0;
+    margin-bottom: .5rem;
+
 }
 
 .cardView .card-row .card-time-time {
-    width: 80%;
+    flex-shrink: 0;
     font-size: 0.775rem;
-    left: 230px;
-    top: -10px;
-    position: relative;
 }
 
 .cardView .card-subtitle {
     font-size: 1.0rem;
     width: 100%;
     margin-top: 2%;
-    float: right;
+   
 }
 
 
 .cardView .card-body{
     display: flex;
+}
+
+.cardView .card-title > div:nth-of-type(2){
+    flex: 1 1;
 }
 
 .cardView .card-body .videoInteraction{
@@ -96,11 +87,26 @@
     padding-top: 1rem;
 }
 
+.cardView .card-body .video{
+    position: relative;
+}
+
 .cardView .card-body .video video{
     width: 100%;
     height: auto;
+    
 }
 
 .card-title-descripton{
     width: 100%;
+}
+
+.cardView .card-body .video .videoView{
+    position: absolute;
+    bottom: 1rem;
+    left: 3rem;
+    height: 2rem;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.6) !important;
+    line-height: 2rem;
 }
