@@ -5,12 +5,22 @@ import ShareIcon from '../image/ShareIcon.svg';
 import './VideoCard.css';
 import VideoJS from './VideoJS';
 import { useState , useRef } from 'react';
+import { colors } from '@material-ui/core';
 const gererateOptions = (props) => {
     const videoJsOptions = { 
-        controls: true,
+        controls:true,
+        controlBar: {
+            children: [
+                "playToggle",
+                'muteToggle'
+            ]
+        },
+        autoplay:'muted',
         responsive: true,
         fluid: true,
+        liveui:false,
         poster: props.poster ,
+       
         sources: [{
           src: props.url,
           type: props.type,
@@ -33,7 +43,9 @@ export default function VideoCard ({id, title,subtitle, descripton, likeNumber, 
     return (
         <div key={title} className="card" 
             onClick={() => {
-                if (onClickHandle) onClickHandle();
+                if (onClickHandle) 
+               
+                onClickHandle();
             }
         }>
             <div className="card-title">
@@ -70,9 +82,10 @@ export default function VideoCard ({id, title,subtitle, descripton, likeNumber, 
                         <span>{shareNumber}</span>
                     </div>
                 </div>
-                <div className="video">
-                    <VideoJS onPlayHandle={() => {onPlayHandle()}} options={gererateOptions(videoData)}></VideoJS>
-                    <div ref={videoViewRef} className="videoView">
+                <div className="video"  >
+                 
+                    <VideoJS onPlayHandle={() => {onPlayHandle()}} options={gererateOptions(videoData)} id1={id}  ></VideoJS>
+                    <div ref={videoViewRef} className="videoView" >
                         <span>{viewNumber}</span>
                     </div>    
                 </div>

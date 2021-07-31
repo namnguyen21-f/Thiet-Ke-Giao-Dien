@@ -4,15 +4,19 @@ import React, { useEffect, useRef, useState } from 'react';
 import videojs from 'video.js';
 
 // eslint-disable-next-line import/prefer-default-export
-const usePlayer = ({ options , onPlayHandle}) => {
+const usePlayer = ({ options , onPlayHandle,id1}) => {
   const videoRef = useRef(null);
+
   const [player, setPlayer] = useState(null);
+  
   useEffect(() => {
     const vjsPlayer = videojs(videoRef.current, options);
+
     vjsPlayer.on('play' , () => {onPlayHandle()});
     setPlayer(vjsPlayer);
     return () => {
       if (player !== null) {
+        
         player.dispose();
       }
     };
@@ -27,11 +31,15 @@ const usePlayer = ({ options , onPlayHandle}) => {
   return videoRef;
 };
 
+
+
 const VideoPlayer = (props) => {
   const playerRef = usePlayer(props);
+  console.log(props)
   return (
     <div data-vjs-player>
-      <video ref={playerRef} className="video-js" />
+    
+      <video ref={playerRef} className="video-js" onClick={()=>{window.open("video/"+props.id1,"_self");}} />
     </div>
   );
 };
