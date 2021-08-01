@@ -35,7 +35,7 @@ export default function VideoCard ({id, title,subtitle, descripton, likeNumber, 
     const [isPlay , setIsPlay] = useState(false);
     const videoViewRef = useRef(null);
     const onPlayHandle = () => {
-        videoViewRef.current.removeChild(videoViewRef.current.children[0]);
+        
     }
 
     const videoPlayClick = (event) =>{
@@ -84,9 +84,7 @@ export default function VideoCard ({id, title,subtitle, descripton, likeNumber, 
                 </div>
                 <Link to={`/video/${id}`} className="video">
                     <VideoJS onPlayHandle={() => {onPlayHandle()}} options={gererateOptions(videoData)}></VideoJS>
-                    <div ref={videoViewRef} className="videoView" >
-                        <span>{viewNumber}</span>
-                    </div>    
+                        
                 </Link>
             </div>
         </div>

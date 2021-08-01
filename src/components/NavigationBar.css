@@ -47,6 +47,10 @@
     font-weight: 540;
 }
 
+.navBar .navContainer ul .active > a{
+    color: #04009A !important;
+}
+
 .navBar .searchBar{ 
     padding: .5rem 1rem;
     position: relative;

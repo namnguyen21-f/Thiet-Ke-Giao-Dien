@@ -25,7 +25,7 @@ const usePlayer = ({ options , onPlayHandle,id1}) => {
       player.src(options.sources[0].src);
       player.poster(options.poster);
     }
-  }, [options]);
+  }, []);
 
   return videoRef;
 };
@@ -35,7 +35,25 @@ const usePlayer = ({ options , onPlayHandle,id1}) => {
 const VideoPlayer = (props) => {
   const playerRef = usePlayer(props);
   useEffect(() => {
-    const id = '#' +playerRef.current.id.replace('_html5_api' , '') + ' ';
+    const id = '#' + playerRef.current.id.replace('_html5_api' , '') + ' ';
+    if (props){
+      if(props.options.autoplay){
+        window.addEventListener('scroll', function () {
+          if (document.querySelector('#' + playerRef.current.id)) {
+            var windowHeight = window.innerHeight,
+            videoEl = document.querySelector('#' + playerRef.current.id);
+            const videoHeight = videoEl.clientHeight;
+            const videoClientRect = videoEl.getBoundingClientRect().top;
+            if ( videoClientRect <= ( (windowHeight) - (videoHeight*.5) ) && videoClientRect >= ( 0 - ( videoHeight*.5 ) ) ) {
+              playerRef.current.play();
+            } else {
+              playerRef.current.pause();
+            }
+          }
+        })
+      }
+    }
+
     document.querySelector(id + '.vjs-big-play-button').addEventListener('click' , (event) =>{
       event.preventDefault();
     })
