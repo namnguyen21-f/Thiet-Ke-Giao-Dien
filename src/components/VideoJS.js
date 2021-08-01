@@ -37,7 +37,7 @@ const VideoPlayer = (props) => {
   useEffect(() => {
     const id = '#' +playerRef.current.id.replace('_html5_api' , '') + ' ';
     document.querySelector(id + '.vjs-big-play-button').addEventListener('click' , (event) =>{
-      event.preventDefault();
+      event.preventDefault() ;
     })
     document.querySelector(id + '.vjs-play-control').addEventListener('click' , (event) =>{
       event.preventDefault();
