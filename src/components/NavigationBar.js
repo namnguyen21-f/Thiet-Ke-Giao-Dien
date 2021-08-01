@@ -1,4 +1,4 @@
-import {Fragment,useState} from 'react';
+import {Fragment,useEffect,useState} from 'react';
 import './NavigationBar.css';
 import {Link} from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search';
@@ -12,6 +12,10 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 export default function NavigationBar({navData}){
     const [isMenuClick , setIsMenuClick] = useState(false);
+
+    useEffect(() =>{
+        console.log()
+    })
     return(
         <div className="navBar" sticky="top">
             <div className="row">
@@ -25,7 +29,7 @@ export default function NavigationBar({navData}){
                         <ul className="d-flex">
                             {navData.map((item,index) => {
                                 return (
-                                    <li key={item.path}><Link to={item.path}>{item.title}</Link></li>
+                                    <li key={item.path} className={item.path === window.location.pathname && "active" }><Link to={item.path}>{item.title}</Link></li>
                                 )
                             })}
                         </ul>
