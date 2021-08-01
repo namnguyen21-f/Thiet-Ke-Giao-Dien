@@ -17,13 +17,15 @@ export default function NavigationBar({navData}){
             <div className="row">
                 <div className="row">
                     <div className="logo">
-                        <span>SHAI</span>
+                        <Link to="/">
+                            <span>SHAI</span>
+                        </Link>
                     </div>
                     <div className="navContainer">
                         <ul className="d-flex">
                             {navData.map((item,index) => {
                                 return (
-                                    <li><Link to={item.path}>{item.title}</Link></li>
+                                    <li key={item.path}><Link to={item.path}>{item.title}</Link></li>
                                 )
                             })}
                         </ul>

@@ -6,7 +6,7 @@ import LogoIcon from '../image/LogoIcon.svg';
 import VideoCard3 from './VideoCard3';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 const gererateOptions = (props) => {  
   const videoJsOptions = { 
       controls: true,
@@ -23,7 +23,7 @@ const gererateOptions = (props) => {
 //data
 export default function VideoCarousel ({videoArray, currentVideo, header,onPlayHandle}) {
     const [selected, setSelected] = useState(null);    
-
+    const history = useHistory();
     useEffect(() => {
         
         if (videoArray && currentVideo && videoArray[0]) {
@@ -72,7 +72,7 @@ export default function VideoCarousel ({videoArray, currentVideo, header,onPlayH
     // };
 
     const handleBackClick = () => {
-      
+      history.goBack();
     };
 
     const handleReportClick = () => {

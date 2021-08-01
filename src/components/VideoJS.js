@@ -35,15 +35,17 @@ const usePlayer = ({ options , onPlayHandle,id1}) => {
 const VideoPlayer = (props) => {
   const playerRef = usePlayer(props);
   useEffect(() => {
-    document.querySelector('.vjs-big-play-button').addEventListener('click' , (event) =>{
+    const id = '#' +playerRef.current.id.replace('_html5_api' , '') + ' ';
+    document.querySelector(id + '.vjs-big-play-button').addEventListener('click' , (event) =>{
       event.preventDefault();
     })
-    document.querySelector('.vjs-play-control').addEventListener('click' , (event) =>{
+    document.querySelector(id + '.vjs-play-control').addEventListener('click' , (event) =>{
       event.preventDefault();
     })
-    document.querySelector('.vjs-mute-control').addEventListener('click' , (event) =>{
+    document.querySelector(id + '.vjs-mute-control').addEventListener('click' , (event) =>{
       event.preventDefault();
     })
+    console.log()
   },[])
   return (
     <div data-vjs-player>

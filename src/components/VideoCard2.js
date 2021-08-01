@@ -10,6 +10,12 @@ const gererateOptions = (props) => {
         responsive: true,
         fluid: true,
         poster: props.poster ,
+        controlBar:{
+            children: [
+                'playToggle',
+                'muteToggle',
+            ]
+        },
         sources: [{
           src: props.url,
           type: props.type,
@@ -27,7 +33,7 @@ export default function VideoCard2 ({id, title, subtitle, onClickHandle,viewNumb
         videoViewRef.current.removeChild(videoViewRef.current.children[0]);
     }
     return (
-        <div key={title} className="cardView" 
+        <div className="cardView" 
             onClick={() => {
                 if (onClickHandle) onClickHandle();
             }

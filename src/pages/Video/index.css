@@ -253,6 +253,10 @@
     margin-top: 1rem;
 }
 
+.VideoPage .commentContainer .userComment{
+    margin-bottom: 1.5rem;
+}
+
 .VideoPage .commentContainer .userComment .d-flex{
     align-items: unset;
 }
@@ -279,11 +283,11 @@
 }
 
 
-.VideoPage .commentContainer .userComment form div{
+.VideoPage .commentContainer .userComment div div{
     width: 100%;
 }
 
-.VideoPage .commentContainer .userComment form img{
+.VideoPage .commentContainer .userComment form > img{
     display: block;
     max-width: 300px;
 }
@@ -305,4 +309,58 @@
 
 .VideoPage .recommendContainer .cardView .subtitle{
     font-size: .75rem;
+}
+
+.commentContainer .commentInput{
+    position: relative;
+}
+
+.commentContainer .commentInput .commentInput__dis{
+    position: absolute;
+    width: 350px !important;
+    bottom: 100%;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 3px 9px 0 rgb(162 176 190 / 15%);
+    z-index: 99;
+    overflow-y: hidden;
+}
+
+.commentContainer .commentInput .commentInput__dis .scrollBar{
+    height: 400px;
+    overflow: scroll;
+    width: 100%;
+}
+
+.commentContainer .commentInput .commentInput__dis img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.commentInput__dis .search div div{
+    width: fit-content !important;
+}
+
+.commentInput__dis .search div input{
+    flex: 1;
+}
+
+/**/
+.commentContainer .commentInput .commentInput__dis .scrollBar::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.commentContainer .commentInput .commentInput__dis .scrollBar::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.commentContainer .commentInput .commentInput__dis .scrollBar::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+	border: 2px solid #555555;
 }

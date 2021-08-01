@@ -10,7 +10,9 @@ import Input from '@material-ui/core/Input';
 import SettingsVoiceIcon from '@material-ui/icons/SettingsVoice';
 import { withRouter } from "react-router";
 import Button from '@material-ui/core/Button';
-import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+import SearchIcon from "@material-ui/icons/Search";
+import {TextField} from '@material-ui/core';
+import SendIcon from '@material-ui/icons/Send';
 import GifIcon from '@material-ui/icons/Gif';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import IconButton from "@material-ui/core/IconButton";
@@ -218,7 +220,20 @@ const LazyLoading = (props) => {
 class VideoPage extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {date: new Date(), videoCarouselData: newSectionData, currentVideo: null , userComment : "",userCommentImageURl: "https://i.pinimg.com/originals/1e/3e/37/1e3e3738d81b9db4f6b6505b236a996a.gif"};
+        this.state = {date: new Date(), videoCarouselData: newSectionData, 
+            currentVideo: null , userComment : "",userCommentImageURl: null,
+            isOptionClick: false};
+        this.handleGifSelect = this.handleGifSelect.bind(this);
+        this.handleOpenOption = this.handleOpenOption.bind(this);
+    }
+    // "https://i.pinimg.com/originals/1e/3e/37/1e3e3738d81b9db4f6b6505b236a996a.gif"
+
+    handleGifSelect(url) {
+        this.setState({userCommentImageURl: url, isOptionClick: false})
+    }
+
+    handleOpenOption(){
+        this.setState({isOptionClick: true})
     }
 
     componentDidUpdate(prevProps){
@@ -251,33 +266,55 @@ class VideoPage extends React.Component{
                                 <div className="roundedImage" style={{backgroundImage: 'url("https://cdn.logo.com/hotlink-ok/logo-social.png")'}}></div>
                                 <form noValidate autoComplete="off">
                                     {this.state.userCommentImageURl && <img src={this.state.userCommentImageURl}></img>}
-                                    <Input placeholder="Nhập “Miến hài”" 
-                                        value={this.state.userComment} onChange={(event) => {
-                                            this.setState({userComment: event.target.value}); 
-                                        }} 
-                                        inputProps={{ 'aria-label': 'description' }}
-                                        endAdornment={
-                                            <InputAdornment style={{width: "fit-content"}} position="end">
-                                                <IconButton>
-                                                    <InsertEmoticonIcon />
-                                                </IconButton>
-                                                <IconButton>
-                                                    <GifIcon />
-                                                </IconButton>
-                                                <IconButton>
-                                                    <SettingsVoiceIcon />
-                                                </IconButton>
-                                              </InputAdornment>
-                                        }  
-                                    />
+                                    <div className="commentInput">
+                                        <Input placeholder="Nhập “Miến hài”" 
+                                            value={this.state.userComment} onChange={(event) => {
+                                                this.setState({userComment: event.target.value}); 
+                                            }} 
+                                            inputProps={{ 'aria-label': 'description' }}
+                                            endAdornment={
+                                                <InputAdornment style={{width: "fit-content"}} position="end">
+                                                    <IconButton onClick={this.handleOpenOption}>
+                                                        <InsertEmoticonIcon />
+                                                    </IconButton>
+                                                    <IconButton>
+                                                        <GifIcon />
+                                                    </IconButton>
+                                                    <IconButton>
+                                                        <SettingsVoiceIcon />
+                                                    </IconButton>
+                                                    <IconButton>
+                                                        <SendIcon></SendIcon>
+                                                    </IconButton>
+                                                </InputAdornment>
+                                            }  
+                                        />
+                                        {this.state.isOptionClick && <div className="commentInput__dis">
+                                            <TextField className="search"
+                                                InputProps={{
+                                                    startAdornment: (
+                                                    <InputAdornment>
+                                                        <IconButton>
+                                                            <SearchIcon />
+                                                        </IconButton>
+                                                    </InputAdornment>
+                                                    )
+                                                }}
+                                            />
+                                            <div className="scrollBar">
+                                                <img onClick={(event) =>{this.handleGifSelect("https://i.pinimg.com/originals/1e/3e/37/1e3e3738d81b9db4f6b6505b236a996a.gif")}} src={"https://i.pinimg.com/originals/1e/3e/37/1e3e3738d81b9db4f6b6505b236a996a.gif"}></img>
+                                                <img src={"https://i.pinimg.com/originals/60/f2/a0/60f2a03fde642d6d1dd953fd4d44ab5c.gif"}></img>
+                                            </div>
+                                        </div>}
+                                    </div>
                                 </form>
                             </div>
-                            <div className="commentOption">
+                            {/* <div className="commentOption">
                                 <Button variant="contained" color="primary">
                                     Send
                                 </Button>
                                
-                            </div>
+                            </div> */}
                         </div>
                         <div className="commentSection">
                             {newComment.map((item, idx) => (

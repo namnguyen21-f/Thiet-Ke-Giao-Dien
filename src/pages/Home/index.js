@@ -54,7 +54,7 @@ const newrecommnendData = [
     },
     {
         id: "2",
-        title: "NickOne",
+        title: "NickOne1",
         subtitle: "Thích ăn chơm chơm",
         time: "20 phút trước",
         viewNumber: "24.9k",
@@ -66,7 +66,7 @@ const newrecommnendData = [
     },
     {
         id: "3",
-        title: "NickSeven",
+        title: "NickSeven2",
         subtitle: "Thích ăn chuối aaaaaa quá trời quá đất luôn",
         time: "5 phút trước",
         viewNumber: "24.9k",
@@ -78,7 +78,7 @@ const newrecommnendData = [
     },
     {
         id: "4",
-        title: "NickOne",
+        title: "NickOne4",
         subtitle: "Thích ăn chơm chơm",
         time: "20 phút trước",
         viewNumber: "24.9k",
@@ -98,7 +98,7 @@ const LazyLoading = (props) => {
         lockRef.current = true
     }
     return (
-        <div ref={containerRef}>
+        <div key={props.keyV} ref={containerRef}>
             {lockRef.current && props.children}
         </div>
     )
@@ -135,9 +135,9 @@ export default class Home extends React.Component{
             <Container className="HomePage">
                 <div className="newSection">
                     <h3>Mới</h3>
-                    {newSectionData.map((item) => {
+                    {newSectionData.map((item,idx) => {
                         return (
-                            <LazyLoading>
+                            <LazyLoading key={item.title}>
                                 <VideoCard {...item} onFollowHandle={this.followHandleClick}/>
                             </LazyLoading>
                         )
@@ -147,7 +147,7 @@ export default class Home extends React.Component{
                 <div className="recommnendSection">
                     <h3>Đề xuất</h3>
                     {newrecommnendData.map((item) => {
-                        return <VideoCard2 {...item} onFollowHandle={this.followHandleClick}/>
+                        return <VideoCard2 key={item.title} {...item} onFollowHandle={this.followHandleClick}/>
                     })}
                 </div> 
             </Container>    
