@@ -3,7 +3,7 @@ import Image from './image.jpg'
 import './index.css';
 import MailOutlineRoundedIcon from '@material-ui/icons/MailOutlineRounded';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
-export default class Stock extends React.Component{
+export default class LoginPage extends React.Component{
     constructor(props){
         super();
     }
@@ -16,7 +16,7 @@ export default class Stock extends React.Component{
         return (
             <div className="LoginPage">
                 <div className="logo">
-                    <h2>StockManage</h2>
+                    <h2>SHAI</h2>
                 </div>
                 <div className="d-flex">
                     <div className="login-image">

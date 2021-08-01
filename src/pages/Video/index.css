@@ -342,6 +342,10 @@
     border: 0 !important;
 }
 
+.VideoPage .recommendContainer .cardView:nth-of-type(1){
+    margin-top: 0 !important;
+}
+
 .VideoPage .recommendContainer .cardView .subtitle{
     font-size: .75rem;
 }
