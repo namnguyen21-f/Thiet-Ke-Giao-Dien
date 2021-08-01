@@ -110,6 +110,11 @@
     width: 100%;
 }
 
+.card .card-body .videoInteraction div{
+    cursor: pointer !important;
+}
+
+
 @media (min-width: 320px) and (max-device-width: 992px) {
 
     .card{
@@ -134,6 +139,9 @@
     .card .card-body .videoInteraction{
         width: calc(40px + .5rem);
     }
+
+    
+
 
     .card .card-title .card-title-title a{
         padding: .5rem 2rem;

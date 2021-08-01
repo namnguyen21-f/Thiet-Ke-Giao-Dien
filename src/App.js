@@ -1,4 +1,5 @@
 import Home from './pages/Home/index';
+import PageNotFound from './pages/NotFound/index';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
 import { Fragment } from 'react';
@@ -70,9 +71,8 @@ function App() {
               <VideoPage></VideoPage>
             </NavigationWrapper>
           </Route>
+          <Route path="" component={PageNotFound} />
         </Switch>
-        
-        
       </div>
     </Router>
     

@@ -168,6 +168,7 @@
     margin-right: .75rem;
 }
 
+
 .VideoPage .commentContainer .commentSection .commentItem .title,.videoinf .d-flex .title{
     display: block;
     color: #333;
@@ -192,8 +193,16 @@
 }
 
 .VideoPage .commentContainer .commentSection .commentItem{
-    display: flex;
     margin-bottom: .75rem;
+}
+
+.VideoPage .commentContainer .commentSection .commentItem div div:nth-of-type(2){
+    flex: 1 1;
+}
+
+.VideoPage .commentContainer .commentSection .commentItem > div:nth-of-type(1){
+    width: 100%;
+    display: flex;
 }
 
 .VideoPage .commentContainer .commentSection .commentItem .d-flex{
@@ -207,7 +216,20 @@
     margin-right: .75rem;
 }
 
-.VideoPage .commentContainer .commentSection .commentItem .d-flex.commentItem__info img{
+.VideoPage .commentContainer .commentSection .commentItem .commentItem__info.d-flex{
+    justify-content: unset;
+}
+
+.VideoPage .commentContainer .commentSection .commentItem .commentItem__info > div{
+    display: flex;
+    align-items: center;
+}
+
+.VideoPage .commentContainer .commentSection .commentItem .commentItem__info div{
+    cursor: pointer;
+}
+
+.VideoPage .commentContainer .commentSection .commentItem .commentItem__info img{
     width: 28px;
     height: 28px;
     display: block;
@@ -363,4 +385,20 @@
 {
 	background-color: #000000;
 	border: 2px solid #555555;
+}
+
+
+
+
+.VideoPage .commentContainer .commentSection .commentItem .userComment{
+    margin: .5rem 0;
+}
+
+.VideoPage .commentContainer .commentSection .commentItem .userComment form{
+    padding: .75rem;    
+}
+
+.VideoPage .commentContainer .commentSection .commentItem .userComment .roundedImage{
+    width: 2.75rem;
+    height: 2.75rem;
 }
