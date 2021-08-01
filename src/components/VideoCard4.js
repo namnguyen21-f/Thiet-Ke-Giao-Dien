@@ -2,7 +2,7 @@
 import {Link} from 'react-router-dom';
 import { useState , useRef } from 'react';
 import VideoJS from './VideoJS';
-import './VideoCard2.css';
+import './VideoCard4.css';
 
 const gererateOptions = (props) => {
     const videoJsOptions = { 
@@ -33,7 +33,7 @@ export default function VideoCard2 ({id, title, subtitle, onClickHandle,viewNumb
         videoViewRef.current.removeChild(videoViewRef.current.children[0]);
     }
     return (
-        <div className="cardView" 
+        <div className="cardView4" 
             onClick={() => {
                 if (onClickHandle) onClickHandle();
             }
@@ -43,9 +43,11 @@ export default function VideoCard2 ({id, title, subtitle, onClickHandle,viewNumb
                     <div className="roundedImage" style={{backgroundImage: 'url("https://cdn.logo.com/hotlink-ok/logo-social.png")'}}></div>
                 </div>
                 <div>
+
                     <div className="card-subtitle">
                         {subtitle && <span className="subtitle">{subtitle}</span>}
                     </div>
+
                     <div className="card-row">
 
                         <div className="card-title-title">

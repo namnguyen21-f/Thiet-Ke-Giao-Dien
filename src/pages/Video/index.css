@@ -173,7 +173,7 @@
     display: block;
     color: #333;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .VideoPage .commentContainer .commentSection .commentItem .subtitle,.videoinf .d-flex .subtitle{
@@ -210,8 +210,8 @@
 }
 
 .VideoPage .commentContainer .commentSection .commentItem .roundedImage{ 
-    width: 3rem;
-    height: 3rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border: 1px solid rgba(0, 0, 0, .2);
     margin-right: .75rem;
 }
@@ -230,9 +230,14 @@
 }
 
 .VideoPage .commentContainer .commentSection .commentItem .commentItem__info img{
-    width: 28px;
-    height: 28px;
+    width: 35px;
+    height: 35px;
+    margin-right: 1.0rem;
     display: block;
+}
+
+.VideoPage .commentContainer .commentSection .commentItem .commentItem__info span {
+    font-size: 1.5rem;
 }
 
 .VideoPage .commentContainer .commentSection .commentItem  .commentItem__content img{
@@ -241,6 +246,7 @@
 
 .VideoPage .commentContainer .commentSection .commentItem  .commentItem__content .subtitle{
     margin-bottom: .5rem;
+    font-size: 1.5rem;
 }
 
 .VideoPage .commentContainer .commentSection .commentItem .gif{
@@ -256,7 +262,7 @@
 
 .VideoPage .videoSection .videoDes .tag{
     color: #065fd4;
-    font-size: .875rem;
+    font-size: 1.275rem;
 }
 
 .VideoPage .videoSection .videoDes span{
@@ -268,11 +274,18 @@
     font-family: sans-serif;
     line-height: 2rem;
     color: #212121;
+    margin-top: 0.5rem;
 }
 
 .VideoPage .videoSection .videoDes .description{
     color: #606060;
-    margin-top: 1rem;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.VideoPage .videoSection .videoDes .subtitle{
+    margin-top: 0.5%;
+    font-size: 2rem;
 }
 
 .VideoPage .commentContainer .userComment{

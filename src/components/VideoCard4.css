@@ -1,4 +1,4 @@
-.cardView{
+.cardView4 {
     border: 2px solid;
     border-image-source: solid rgba(0, 0, 0, .8);
     cursor: pointer;
@@ -6,60 +6,61 @@
     margin-top: 2rem;
 }
 
-.cardView .card-title{
+.cardView4 .card-title{
     display: flex;
     flex-direction: row;
 }
 
 
-.cardView .card-title .card-title-image{
+.cardView4 .card-title .card-title-image{
     margin-right: 0.5rem;
     margin-top: 5%;
 }
 
-.cardView .card-title .roundedImage {
+.cardView4 .card-title .roundedImage {
     width: 48px;
     height: 48px;
     border: 1px solid rgba(0, 0, 0, .2);
     margin-left: 40%;
 }
 
-.cardView .card-row {
+.cardView4 .card-row {
     display: flex;
     justify-content: space-between;
     margin-top: 3%;
 }
 
-.cardView .card-row .card-title-title {
+.cardView4 .card-row .card-title-title {
     font-size: 1.0rem;
     flex-shrink: 0;
     margin-left: 10%;
 }
 
-.cardView .card-row .card-time-time {
+.cardView4 .card-row .card-time-time {
     flex-shrink: 0;
-    font-size: 0.775rem;
+    font-size: 1.0rem;
     margin-right: 10%;
 }
 
-.cardView .card-subtitle {
-    font-size: 1.0rem;
-    width: 80%;
-    margin-top: 2%;
+.cardView4 .card-subtitle {
+    font-size: 1.257rem;
+    flex-shrink: 0;
     margin-left: 10%;
+    margin-top: 4%;
+    width: 80%;
     font-weight: 600;
 }
 
 
-.cardView .card-body{
+.cardView4 .card-body{
     display: flex;
 }
 
-.cardView .card-title > div:nth-of-type(2){
+.cardView4 .card-title > div:nth-of-type(2){
     flex: 1 1;
 }
 
-.cardView .card-body .videoInteraction{
+.cardView4 .card-body .videoInteraction{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -70,31 +71,31 @@
 }
 
 
-.cardView .card-body .videoInteraction div{
+.cardView4 .card-body .videoInteraction div{
     text-align: center;
     margin-bottom: .75rem;
 }
 
-.cardView .card-body .videoInteraction div span{
+.cardView4 .card-body .videoInteraction div span{
     display: block;
 }
 
-.cardView .card-body .videoInteraction div img{
+.cardView4 .card-body .videoInteraction div img{
     width: 40px;
     height: 40px;
     display: block;
 }
 
-.cardView .card-body .video{
+.cardView4 .card-body .video{
     flex: 1 1;
     padding-top: 1rem;
 }
 
-.cardView .card-body .video{
+.cardView4 .card-body .video{
     position: relative;
 }
 
-.cardView .card-body .video video{
+.cardView4 .card-body .video video{
     width: 100%;
     height: auto;
     
@@ -104,7 +105,7 @@
     width: 100%;
 }
 
-.cardView .card-body .video .videoView{
+.cardView4 .card-body .video .videoView{
     position: absolute;
     bottom: 1rem;
     left: 3rem;
