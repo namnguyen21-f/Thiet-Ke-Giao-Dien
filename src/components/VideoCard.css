@@ -29,7 +29,6 @@
 .card .card-title .card-title-title > div{
     flex: 1 1;
     
-    
 }
 
 .card .card-title .card-title-title a{
@@ -40,18 +39,11 @@
     display: block;
     border-image-source: linear-gradient(to right, #04009A, #77ACF1);
     font-size: .875rem;
-    text-align:justify;
     cursor: pointer;
-    user-select: none;
-    max-width: 150px;
-    
 }
-
-
 
 .card .card-title .card-title-title div span{
     display: block;
-
 }
 
 .card .card-title .card-title-title div span:nth-of-type(1){
@@ -79,7 +71,6 @@
 .card .card-body .videoInteraction div{
     text-align: center;
     margin-bottom: .75rem;
-    cursor: pointer;
 }
 
 .card .card-body .videoInteraction div span{
