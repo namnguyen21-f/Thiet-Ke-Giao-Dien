@@ -397,16 +397,14 @@ class VideoPage extends React.Component{
                         <div className="commentSection">
                             {this.state.commentData && this.state.commentData.map((item, idx) => {
                                 const trace= idx + "";
-                                return <Fragment>
-                                    <CommentItem key={item.id} trace={trace} clName="mainItem" item={item} handleSend={this.handleRespondCmt}></CommentItem>
-                                </Fragment>
+                                return (<CommentItem key={item.id} trace={trace} clName="mainItem" item={item} handleSend={this.handleRespondCmt}></CommentItem>)
                             })}
                         </div>
                     </div>
                 </div>
                 <div className="recommendContainer">
                     {newrecommnendData.map((item) => {
-                        return <VideoCard4 {...item} onFollowHandle={this.followHandleClick}/>
+                        return <VideoCard4 key={item.id} {...item} onFollowHandle={this.followHandleClick}/>
                     })}
                 </div>
             </Container>    

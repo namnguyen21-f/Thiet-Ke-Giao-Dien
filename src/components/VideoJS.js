@@ -34,18 +34,20 @@ const VideoPlayer = (props) => {
   const playerRef = usePlayer(props);
   useEffect(() => {
     if (playerRef.current !== null){
+      const initialId = playerRef.current.id;
       const id = '#' + playerRef.current.id.replace('_html5_api' , '') + ' ';
+
       if(props.options.autoplay){
         window.addEventListener('scroll', function () {
-          if (document.querySelector('#' + playerRef.current.id)) {
+          if (document.querySelector('#' + initialId)) {
             var windowHeight = window.innerHeight,
-            videoEl = document.querySelector('#' + playerRef.current.id);
+            videoEl = document.querySelector('#' + initialId);
             const videoHeight = videoEl.clientHeight;
             const videoClientRect = videoEl.getBoundingClientRect().top;
             if ( videoClientRect <= ( (windowHeight) - (videoHeight*.5) ) && videoClientRect >= ( 0 - ( videoHeight*.5 ) ) ) {
-              playerRef.current.play();
+              videoEl.play();
             } else {
-              playerRef.current.pause();
+              videoEl.pause();
             }
           }
         })
@@ -68,22 +70,8 @@ const VideoPlayer = (props) => {
         event.preventDefault();
       })
     }
-<<<<<<< Updated upstream
-
-    document.querySelector(id + '.vjs-big-play-button').addEventListener('click' , (event) =>{
-      event.preventDefault() ;
-    })
-    document.querySelector(id + '.vjs-play-control').addEventListener('click' , (event) =>{
-      event.preventDefault();
-    })
-    document.querySelector(id + '.vjs-mute-control').addEventListener('click' , (event) =>{
-      event.preventDefault();
-    })
-    console.log()
-=======
     
     
->>>>>>> Stashed changes
   },[])
   return (
     <div data-vjs-player>
