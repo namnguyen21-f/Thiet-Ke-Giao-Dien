@@ -25,18 +25,16 @@ const usePlayer = ({ options , onPlayHandle,id1}) => {
       player.src(options.sources[0].src);
       player.poster(options.poster);
     }
-  }, []);
+  }, [options.sources[0].src]);
 
   return videoRef;
 };
 
-
-
 const VideoPlayer = (props) => {
   const playerRef = usePlayer(props);
   useEffect(() => {
-    const id = '#' + playerRef.current.id.replace('_html5_api' , '') + ' ';
-    if (props){
+    if (playerRef.current !== null){
+      const id = '#' + playerRef.current.id.replace('_html5_api' , '') + ' ';
       if(props.options.autoplay){
         window.addEventListener('scroll', function () {
           if (document.querySelector('#' + playerRef.current.id)) {
@@ -52,7 +50,25 @@ const VideoPlayer = (props) => {
           }
         })
       }
+      if (props.options.limitPreload){
+        playerRef.current.addEventListener("timeupdate", function() {
+          if (this.currentTime > props.options.limitPreload) {
+              this.pause();
+           }
+        }, false);
+      }
+  
+      document.querySelector(id + '.vjs-big-play-button').addEventListener('click' , (event) =>{
+        event.preventDefault() ;
+      })
+      document.querySelector(id + '.vjs-play-control').addEventListener('click' , (event) =>{
+        event.preventDefault();
+      })
+      document.querySelector(id + '.vjs-mute-control').addEventListener('click' , (event) =>{
+        event.preventDefault();
+      })
     }
+<<<<<<< Updated upstream
 
     document.querySelector(id + '.vjs-big-play-button').addEventListener('click' , (event) =>{
       event.preventDefault();
@@ -64,6 +80,10 @@ const VideoPlayer = (props) => {
       event.preventDefault();
     })
     console.log()
+=======
+    
+    
+>>>>>>> Stashed changes
   },[])
   return (
     <div data-vjs-player>

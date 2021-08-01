@@ -1,4 +1,5 @@
 import Home from './pages/Home/index';
+import LoginPage from './pages/Login/index';
 import PageNotFound from './pages/NotFound/index';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
@@ -51,6 +52,9 @@ function App() {
               <Home></Home>
             </NavigationWrapper>
           </Route>
+          <Route exact path="/login">
+            <LoginPage></LoginPage>
+          </Route>
           <Route path="/binhchon">
             <NavigationWrapper>
               <Home></Home>
@@ -71,6 +75,8 @@ function App() {
               <VideoPage></VideoPage>
             </NavigationWrapper>
           </Route>
+
+          
           <Route path="" component={PageNotFound} />
         </Switch>
       </div>

@@ -19,7 +19,8 @@ const gererateOptions = (props) => {
         sources: [{
           src: props.url,
           type: props.type,
-        }]
+        }],
+        limitPreload: 6,
     }
     return videoJsOptions;    
 }

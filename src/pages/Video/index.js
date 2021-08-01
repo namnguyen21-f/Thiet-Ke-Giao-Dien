@@ -42,88 +42,7 @@ const ChosenEmoji = ({onHandleEmoji}) => {
 };
 
 
-var newSectionData = [
-    {
-        id: "1",
-        title: "Nguyen Nam Heh",
-        subtitle: "Hôm nay như tui vui quá đi thôi",
-        likeNumber: "991.9k",
-        commentNumber: "2.9k",
-        shareNumber: "24.9k",
-        viewNumber: "24.9k",
-        isfollow: false,
-        videoData: {
-            poster: 'https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg',
-            url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-            type: "video/mp4"
-        },
-        path: "/video/1",
-    },
-    {
-        id: "2",
-        title: "Nguyen Nam h",
-        subtitle: "Hôm nay như tui vui quá đi thôi",
-        likeNumber: "991.9k",
-        commentNumber: "2.9k",
-        shareNumber: "24.9k",
-        viewNumber: "24.9k",
-        isfollow: false,
-        videoData: {
-            poster: 'https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg',
-            url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-            type: "video/mp4"
-        },
-        path: "/video/2",
-    },
-    {
-        id: "3",
-        title: "Nguyen Nam dHeh",
-        subtitle: "Hôm nay như tui vui quá đi thôi",
-        likeNumber: "991.9k",
-        commentNumber: "2.9k",
-        shareNumber: "24.9k",
-        viewNumber: "24.9k",
-        isfollow: false,
-        videoData: {
-            poster: 'https://i.ytimg.com/vi/c2gB83g_HSc/maxresdefault.jpg',
-            url : "https://multiplatform-f.akamaihd.net/i/multi/april11/sintel/sintel-hd_,512x288_450_b,640x360_700_b,768x432_1000_b,1024x576_1400_m,.mp4.csmil/master.m3u8",
-            type: "application/x-mpegURL"
-        },
-        path: "/video/3",
-    },
-    {
-        id: "4",
-        title: "Nguyen Nam sHeh",
-        subtitle: "Hôm nay như tui vui quá đi thôi",
-        likeNumber: "991.9k",
-        commentNumber: "2.9k",
-        shareNumber: "24.9k",
-        viewNumber: "24.9k",
-        isfollow: false,
-        videoData: {
-            poster: 'https://i.ytimg.com/vi/c2gB83g_HSc/maxresdefault.jpg',
-            url : "https://multiplatform-f.akamaihd.net/i/multi/april11/sintel/sintel-hd_,512x288_450_b,640x360_700_b,768x432_1000_b,1024x576_1400_m,.mp4.csmil/master.m3u8",
-            type: "application/x-mpegURL"
-        },
-        path: "/video/4",
-    },
-    {
-        id: "5",
-        title: "Nguyen Nam rHeh",
-        subtitle: "Hôm nay như tui vui quá đi thôi",
-        likeNumber: "991.9k",
-        commentNumber: "2.9k",
-        shareNumber: "24.9k",
-        viewNumber: "24.9k",
-        isfollow: false,
-        videoData: {
-            poster: 'https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg',
-            url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-            type: "video/mp4"
-        },
-        path: "/video/5",
-    },
-]
+
 const newrecommnendData = [
     {
         id: "1",
@@ -132,8 +51,8 @@ const newrecommnendData = [
         time: "5 phút trước",
         viewNumber: "24.9k",
         videoData: {
-            poster: 'https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg',
-            url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+            poster: 'https://c.files.bbci.co.uk/650D/production/_118496852_gettyimages-96668384.jpg',
+            url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
             type: "video/mp4"
         }
     },
@@ -144,8 +63,8 @@ const newrecommnendData = [
         time: "20 phút trước",
         viewNumber: "24.9k",
         videoData: {
-            poster: 'https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg',
-            url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+            poster: 'https://c.files.bbci.co.uk/650D/production/_118496852_gettyimages-96668384.jpg',
+            url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
             type: "video/mp4"
         }
     },
@@ -327,7 +246,7 @@ const LazyLoading = (props) => {
 class VideoPage extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {date: new Date(), videoCarouselData: newSectionData, commentData: newComment,
+        this.state = {date: new Date(), videoCarouselData: newrecommnendData, commentData: newComment,
             currentVideo: null , userComment : "",userCommentGifURl: null,userCommentEmoji: [],
             isOptionClick: false , optionStyle: ""};
         this.handleGifSelect = this.handleGifSelect.bind(this);
@@ -419,14 +338,15 @@ class VideoPage extends React.Component{
 
     componentDidUpdate(prevProps){
         if(this.props.match.params.id!== prevProps.match.params.id){
+            
             const id = this.props.match.params.id;
-            this.setState({videoCarouselData: newSectionData, currentVideo: newSectionData[id]})
+            this.setState({videoCarouselData: newrecommnendData, currentVideo: newrecommnendData[id-1]})
         }
     }
 
     componentDidMount() {
-        const paramId = this.props.match.params.id;
-        this.setState({videoCarouselData: newSectionData, currentVideo: newSectionData[0]})
+        
+        this.setState({videoCarouselData: newrecommnendData, currentVideo: newrecommnendData[0]})
     }
 
     render(){

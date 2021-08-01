@@ -21,15 +21,12 @@ const gererateOptions = (props) => {
   return videoJsOptions;    
 }
 //data
-export default function VideoCarousel ({videoArray, currentVideo, header,onPlayHandle}) {
+export default function VideoCarousel ({currentVideo, header,onPlayHandle}) {
     const [selected, setSelected] = useState(null);    
     const history = useHistory();
     useEffect(() => {
-        
-        if (videoArray && currentVideo && videoArray[0]) {
-            setSelected(currentVideo);
-        }
- 
+      console.log(currentVideo)
+      setSelected(currentVideo);
     }, [currentVideo]);
 
     // const handleSelectedImageChange = (newIdx) => {
