@@ -29,7 +29,7 @@ export default function NavigationBar({navData}){
                         <ul className="d-flex">
                             {navData.map((item,index) => {
                                 return (
-                                    <li key={item.path} className={item.path === window.location.pathname && "active" }><Link to={item.path}>{item.title}</Link></li>
+                                    <li key={item.path} className={item.path === window.location.pathname ? "active" : "" }><Link to={item.path}>{item.title}</Link></li>
                                 )
                             })}
                         </ul>

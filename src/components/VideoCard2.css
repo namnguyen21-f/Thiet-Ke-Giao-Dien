@@ -50,6 +50,10 @@
     font-weight: 600;
 }
 
+.cardView .card-subtitle a{
+    color: #333;
+}
+
 
 .cardView .card-body{
     display: flex;

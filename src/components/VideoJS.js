@@ -45,7 +45,16 @@ const VideoPlayer = (props) => {
             const videoHeight = videoEl.clientHeight;
             const videoClientRect = videoEl.getBoundingClientRect().top;
             if ( videoClientRect <= ( (windowHeight) - (videoHeight*.5) ) && videoClientRect >= ( 0 - ( videoHeight*.5 ) ) ) {
-              videoEl.play();
+              const playPromise = videoEl.play();
+              if (playPromise !== undefined) {
+                playPromise
+                  .then(_ => {
+                    
+                  })
+                  .catch(error => {
+    
+                  });
+              }
             } else {
               videoEl.pause();
             }

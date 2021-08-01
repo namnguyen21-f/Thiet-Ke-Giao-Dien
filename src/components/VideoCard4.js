@@ -45,7 +45,9 @@ export default function VideoCard2 ({id, title, subtitle, onClickHandle,viewNumb
                 <div>
 
                     <div className="card-subtitle">
-                        {subtitle && <span className="subtitle">{subtitle}</span>}
+                         <Link to={`/video/${id}`}>
+                            {subtitle && <span className="subtitle">{subtitle}</span>}
+                        </Link>
                     </div>
 
                     <div className="card-row">
