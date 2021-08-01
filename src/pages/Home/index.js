@@ -129,13 +129,8 @@ export default class Home extends React.Component{
                     <h3>Mới</h3>
                     {newSectionData.map((item) => {
                         return (
-<<<<<<< Updated upstream
-                            <LazyLoading>
-                                <VideoCard {...item} onFollowHandle={this.followHandleClick}/>
-=======
                             <LazyLoading key={item.title}>
                                 <VideoCard {...item} onFollowHandle={this.followHandleClick} onLikeHandle={this.likeHandleClick}/>
->>>>>>> Stashed changes
                             </LazyLoading>
                         )
                     })}

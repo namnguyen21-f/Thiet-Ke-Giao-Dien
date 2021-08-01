@@ -6,32 +6,21 @@ import LikedIcon from '../image/LikedIcon.png';
 import './VideoCard.css';
 import VideoJS from './VideoJS';
 import { useState , useRef } from 'react';
-<<<<<<< Updated upstream
-import { colors } from '@material-ui/core';
-=======
 import {Link} from 'react-router-dom';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import videojs from 'video.js';
->>>>>>> Stashed changes
 const gererateOptions = (props) => {
     const videoJsOptions = { 
-        controls:true,
-        controlBar: {
-            children: [
-                "playToggle",
-                'muteToggle'
-            ]
-        },
-<<<<<<< Updated upstream
-        autoplay:'muted',
+        controls: true,
         responsive: true,
         fluid: true,
-        liveui:false,
-=======
-     
->>>>>>> Stashed changes
+        controlBar:{
+            children: [
+                'playToggle',
+                'muteToggle',
+            ]
+        },
+        autoplay:'muted',
         poster: props.poster ,
-       
         sources: [{
           src: props.url,
           type: props.type,
@@ -51,9 +40,6 @@ export default function VideoCard ({id, title,subtitle, descripton, likeNumber, 
     const onPlayHandle = () => {
         videoViewRef.current.removeChild(videoViewRef.current.children[0]);
     }
-<<<<<<< Updated upstream
-
-=======
     var state='white'
     var state1='blue';
     if(isfollow){state='#04009A';state1='white'}
@@ -62,13 +48,10 @@ export default function VideoCard ({id, title,subtitle, descripton, likeNumber, 
     const videoPlayClick = (event) =>{
         event.preventDefault();
     }
->>>>>>> Stashed changes
     return (
         <div key={title} className="card" 
             onClick={() => {
-                if (onClickHandle) 
-               
-                onClickHandle();
+                if (onClickHandle) onClickHandle();
             }
         }>
             <div className="card-title">
@@ -105,18 +88,12 @@ export default function VideoCard ({id, title,subtitle, descripton, likeNumber, 
                         <span>{shareNumber}</span>
                     </div>
                 </div>
-<<<<<<< Updated upstream
-                <div className="video"  >
-                 
-                    <VideoJS onPlayHandle={() => {onPlayHandle()}} options={gererateOptions(videoData)} id1={id}  ></VideoJS>
-=======
                 <Link to={`/video/${id}`} className="video">
-                    <VideoJS onPlayHandle={() => {onPlayHandle() ;}} options={gererateOptions(videoData)} >{}</VideoJS>
->>>>>>> Stashed changes
+                    <VideoJS onPlayHandle={() => {onPlayHandle()}} options={gererateOptions(videoData)}></VideoJS>
                     <div ref={videoViewRef} className="videoView" >
                         <span>{viewNumber}</span>
                     </div>    
-                </div>
+                </Link>
             </div>
         </div>
     )
