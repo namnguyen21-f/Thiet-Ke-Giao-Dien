@@ -68,22 +68,8 @@ const VideoPlayer = (props) => {
         event.preventDefault();
       })
     }
-<<<<<<< Updated upstream
-
-    document.querySelector(id + '.vjs-big-play-button').addEventListener('click' , (event) =>{
-      event.preventDefault();
-    })
-    document.querySelector(id + '.vjs-play-control').addEventListener('click' , (event) =>{
-      event.preventDefault();
-    })
-    document.querySelector(id + '.vjs-mute-control').addEventListener('click' , (event) =>{
-      event.preventDefault();
-    })
-    console.log()
-=======
     
     
->>>>>>> Stashed changes
   },[])
   return (
     <div data-vjs-player>

@@ -27,7 +27,7 @@ const gererateOptions = (props) => {
 //title : string, subtitle: string, descripton: Componet for more dec, 
 //  likeNumber, commentNumber, shareNumber : string
 //  onClickHandle : card on Click
-export default function VideoCard2 ({id, title, subtitle, onClickHandle,viewNumber, 
+export default function VideoCard2 ({id, title, subtitle, onClickHandle,viewNumber, poster , posterGif, 
     videoData, time}) {
     const videoViewRef = useRef(null);
     const onPlayHandle = () => {
@@ -65,10 +65,8 @@ export default function VideoCard2 ({id, title, subtitle, onClickHandle,viewNumb
             </div>
             <div className="card-body">
                 <Link to={`/video/${id}`} className="video">
-                    <VideoJS onPlayHandle={() => {onPlayHandle()}} options={gererateOptions(videoData)}></VideoJS>
-                    <div ref={videoViewRef} className="videoView" >
-                        <span>{viewNumber}</span>
-                    </div>    
+                    <img class="static" src={poster}></img>
+                    <img className="active" src={posterGif}></img>   
                 </Link>
             </div>
         </div>

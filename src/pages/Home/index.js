@@ -62,11 +62,9 @@ const newrecommnendData = [
         subtitle: "Thích ăn chuối aaaaaa quá trời quá đất luôn",
         time: "5 phút trước",
         viewNumber: "24.9k",
-        videoData: {
-            poster: 'https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg',
-            url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-            type: "video/mp4"
-        }
+        poster: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Big_Buck_Bunny_4K.webm/310px-seek%3D116-Big_Buck_Bunny_4K.webm.jpg",
+        posterGif: "https://thumbs.gfycat.com/BlueFixedAtlanticspadefish-size_restricted.gif",
+        
     },
     {
         id: "2",
@@ -74,11 +72,9 @@ const newrecommnendData = [
         subtitle: "Thích ăn chơm chơm",
         time: "20 phút trước",
         viewNumber: "24.9k",
-        videoData: {
-            poster: 'https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg',
-            url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-            type: "video/mp4"
-        }
+        poster: "https://theplaylist.net/wp-content/uploads/2018/05/doctor-strange-avengers-infinity-war-1-750x400.jpg",
+        posterGif: "https://media1.tenor.com/images/0e92f4c4c4290d9d51a234185886090f/tenor.gif?itemid=15245265",
+        
     },
     {
         id: "3",
@@ -86,11 +82,8 @@ const newrecommnendData = [
         subtitle: "Thích ăn chuối aaaaaa quá trời quá đất luôn",
         time: "5 phút trước",
         viewNumber: "24.9k",
-        videoData: {
-            poster: 'https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg',
-            url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-            type: "video/mp4"
-        }
+        poster: "https://theplaylist.net/wp-content/uploads/2018/05/doctor-strange-avengers-infinity-war-1-750x400.jpg",
+        posterGif: "https://media1.tenor.com/images/0e92f4c4c4290d9d51a234185886090f/tenor.gif?itemid=15245265",
     },
     {
         id: "4",
@@ -98,11 +91,8 @@ const newrecommnendData = [
         subtitle: "Thích ăn chơm chơm",
         time: "20 phút trước",
         viewNumber: "24.9k",
-        videoData: {
-            poster: 'https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg',
-            url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-            type: "video/mp4"
-        }
+        poster: "https://znews-photo.zadn.vn/w660/Uploaded/bzcvolp3/2019_04_29/ironmantony.jpg",
+        posterGif: "https://i.pinimg.com/originals/b9/6b/a7/b96ba7c09694b5ece6db21c7e917d943.gif",
     },
 ]
 

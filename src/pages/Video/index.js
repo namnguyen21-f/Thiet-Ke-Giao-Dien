@@ -50,6 +50,8 @@ const newrecommnendData = [
         subtitle: "Thích ăn chuối aaaaaa quá trời quá đất luôn",
         time: "5 phút trước",
         viewNumber: "24.9k",
+        poster: "https://c.files.bbci.co.uk/650D/production/_118496852_gettyimages-96668384.jpg",
+        posterGif: "https://i.pinimg.com/originals/86/06/3d/86063d349f9bd4b9b5145f1fa23957db.gif",
         videoData: {
             poster: 'https://c.files.bbci.co.uk/650D/production/_118496852_gettyimages-96668384.jpg',
             url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
@@ -62,6 +64,8 @@ const newrecommnendData = [
         subtitle: "Thích ăn chơm chơm",
         time: "20 phút trước",
         viewNumber: "24.9k",
+        poster: "https://c.files.bbci.co.uk/650D/production/_118496852_gettyimages-96668384.jpg",
+        posterGif: "https://i.pinimg.com/originals/86/06/3d/86063d349f9bd4b9b5145f1fa23957db.gif",
         videoData: {
             poster: 'https://c.files.bbci.co.uk/650D/production/_118496852_gettyimages-96668384.jpg',
             url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
@@ -74,6 +78,8 @@ const newrecommnendData = [
         subtitle: "Thích ăn chuối aaaaaa quá trời quá đất luôn",
         time: "5 phút trước",
         viewNumber: "24.9k",
+        poster: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Big_Buck_Bunny_4K.webm/310px-seek%3D116-Big_Buck_Bunny_4K.webm.jpg",
+        posterGif: "https://thumbs.gfycat.com/BlueFixedAtlanticspadefish-size_restricted.gif",
         videoData: {
             poster: 'https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg',
             url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
@@ -86,6 +92,8 @@ const newrecommnendData = [
         subtitle: "Thích ăn chơm chơm",
         time: "20 phút trước",
         viewNumber: "24.9k",
+        poster: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Big_Buck_Bunny_4K.webm/310px-seek%3D116-Big_Buck_Bunny_4K.webm.jpg",
+        posterGif: "https://thumbs.gfycat.com/BlueFixedAtlanticspadefish-size_restricted.gif",
         videoData: {
             poster: 'https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg',
             url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
