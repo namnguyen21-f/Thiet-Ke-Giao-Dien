@@ -99,10 +99,19 @@
     position: relative;
 }
 
-.cardView4 .card-body .video video{
+.cardView4 .card-body .video img{
     width: 100%;
-    height: auto;
-    
+    height: 200px;
+    display: block;
+}
+
+.cardView4 .card-body .video:hover img.static{
+    opacity: 0;
+}
+
+.cardView4 .card-body .video img.static {
+    position:absolute;
+    background: white;
 }
 
 .card-title-descripton{
