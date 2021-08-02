@@ -55,7 +55,7 @@ export default function VideoCard ({id, title,subtitle, descripton, likeNumber, 
                 <div>
                     <div className="card-title-title d-flex">
                         <div>
-                            <span className="title">{title}</span>
+                            <Link to={'/video/' + id}><span className="title">{title}</span></Link>
                             {subtitle && <span className="subtitle">{subtitle}</span>}
                         </div>
                         <a onClick={(event) => {onFollowHandle(event,id)}}>{isfollow ? "Followed" : "Follow"}</a>
