@@ -34,18 +34,29 @@ const VideoPlayer = (props) => {
   const playerRef = usePlayer(props);
   useEffect(() => {
     if (playerRef.current !== null){
+      const initialId = playerRef.current.id;
       const id = '#' + playerRef.current.id.replace('_html5_api' , '') + ' ';
+
       if(props.options.autoplay){
         window.addEventListener('scroll', function () {
-          if (document.querySelector('#' + playerRef.current.id)) {
+          if (document.querySelector('#' + initialId)) {
             var windowHeight = window.innerHeight,
-            videoEl = document.querySelector('#' + playerRef.current.id);
+            videoEl = document.querySelector('#' + initialId);
             const videoHeight = videoEl.clientHeight;
             const videoClientRect = videoEl.getBoundingClientRect().top;
             if ( videoClientRect <= ( (windowHeight) - (videoHeight*.5) ) && videoClientRect >= ( 0 - ( videoHeight*.5 ) ) ) {
-              playerRef.current.play();
+              const playPromise = videoEl.play();
+              if (playPromise !== undefined) {
+                playPromise
+                  .then(_ => {
+                    
+                  })
+                  .catch(error => {
+    
+                  });
+              }
             } else {
-              playerRef.current.pause();
+              videoEl.pause();
             }
           }
         })

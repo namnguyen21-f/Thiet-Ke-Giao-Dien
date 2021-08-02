@@ -16,6 +16,7 @@ const newSectionData = [
         shareNumber: "24.9k",
         viewNumber: "24.9k",
         isfollow: false,
+        islike: false,
         videoData: {
             poster: 'https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg',
             url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
@@ -31,6 +32,7 @@ const newSectionData = [
         shareNumber: "24.9k",
         viewNumber: "24.9k",
         isfollow: false,
+        islike:true,
         videoData: {
             poster: 'https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg',
             url : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
@@ -115,6 +117,7 @@ export default class Home extends React.Component{
         super(props);
         this.state = {date: new Date(), newSectionData: newSectionData };
         this.followHandleClick = this.followHandleClick.bind(this);
+        this.likeHandleClick = this.likeHandleClick.bind(this);
     }
 
     componentDidMount() {
@@ -135,7 +138,20 @@ export default class Home extends React.Component{
         
     }
 
-
+    async likeHandleClick(event,id) {
+        event.preventDefault();
+        let index = this.state.newSectionData.findIndex(ele => ele.id === id);
+        
+        if (this.state.newSectionData[index].islike){
+            //generate API....
+            this.state.newSectionData[index].islike = false;
+        }else{
+            //
+            this.state.newSectionData[index].islike = true;
+        }
+        this.setState({newSectionData: this.state.newSectionData});
+        
+    }
     render(){
         return (
             <Container className="HomePage">
@@ -144,7 +160,7 @@ export default class Home extends React.Component{
                     {newSectionData.map((item,idx) => {
                         return (
                             <LazyLoading key={item.title}>
-                                <VideoCard {...item} onFollowHandle={this.followHandleClick}/>
+                                <VideoCard {...item} onFollowHandle={this.followHandleClick} onLikeHandle={this.likeHandleClick}/>
                             </LazyLoading>
                         )
                     })}

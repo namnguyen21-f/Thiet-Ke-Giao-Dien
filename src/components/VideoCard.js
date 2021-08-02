@@ -2,6 +2,7 @@
 import LikeIcon from '../image/LikedIcon.svg';
 import CommentIcon from '../image/CommentIcon.svg';
 import ShareIcon from '../image/ShareIcon.svg';
+import LikedIcon from '../image/LikedIcon.png';
 import './VideoCard.css';
 import VideoJS from './VideoJS';
 import { useState , useRef } from 'react';
@@ -18,6 +19,7 @@ const gererateOptions = (props) => {
                 'muteToggle',
             ]
         },
+        autoplay:'muted',
         poster: props.poster ,
         sources: [{
           src: props.url,
@@ -30,18 +32,23 @@ const gererateOptions = (props) => {
 // title : string, subtitle: string, descripton: Componet for more dec, 
 //  likeNumber, commentNumber, shareNumber : string
 //  onClickHandle : card on Click
+
 export default function VideoCard ({id, title,subtitle, descripton, likeNumber, commentNumber, shareNumber, viewNumber, 
-        videoData, isfollow ,onClickHandle , onFollowHandle}) {
+        videoData, isfollow, islike ,onClickHandle , onFollowHandle, onLikeHandle}) {
     const [isPlay , setIsPlay] = useState(false);
     const videoViewRef = useRef(null);
     const onPlayHandle = () => {
         
     }
 
+    var state='white'
+    var state1='blue';
+    if(isfollow){state='#04009A';state1='white'}
+    var like=LikeIcon
+    if(islike){like=LikedIcon}
     const videoPlayClick = (event) =>{
         event.preventDefault();
     }
-
     return (
         <div key={title} className="card" 
             onClick={() => {
@@ -53,12 +60,13 @@ export default function VideoCard ({id, title,subtitle, descripton, likeNumber, 
                     <div className="roundedImage" style={{backgroundImage: 'url("https://cdn.logo.com/hotlink-ok/logo-social.png")'}}></div>
                 </div>
                 <div>
-                    <div className="card-title-title d-flex">
+                    <div className="card-title-title d-flex" >
                         <div>
                             <Link to={'/video/' + id}><span className="title">{title}</span></Link>
                             {subtitle && <span className="subtitle">{subtitle}</span>}
+                            <span className="title">{title}</span>
                         </div>
-                        <a onClick={(event) => {onFollowHandle(event,id)}}>{isfollow ? "Followed" : "Follow"}</a>
+                        <a  style={{backgroundColor:state,color:state1}}onClick={(event) => {onFollowHandle(event,id);}  } >{!isfollow ?  "Follow":"Followed" }</a>
                     </div>
                     {descripton && 
                         <div className="card-title-descripton">
@@ -70,7 +78,7 @@ export default function VideoCard ({id, title,subtitle, descripton, likeNumber, 
             <div className="card-body">
                 <div className="videoInteraction">
                     <div>
-                        <img src={LikeIcon}></img>
+                        <img src={like} onClick={(event) => {onLikeHandle(event,id);console.log(islike)} }></img>
                         <span>{likeNumber}</span>
                     </div>
                     <div>

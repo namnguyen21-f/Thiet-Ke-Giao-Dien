@@ -25,7 +25,6 @@ export default function VideoCarousel ({currentVideo, header,onPlayHandle}) {
     const [selected, setSelected] = useState(null);    
     const history = useHistory();
     useEffect(() => {
-      console.log(currentVideo)
       setSelected(currentVideo);
     }, [currentVideo]);
 

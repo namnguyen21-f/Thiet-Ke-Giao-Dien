@@ -2,7 +2,7 @@
 import {Link} from 'react-router-dom';
 import { useState , useRef } from 'react';
 import VideoJS from './VideoJS';
-import './VideoCard2.css';
+import './VideoCard4.css';
 
 const gererateOptions = (props) => {
     const videoJsOptions = { 
@@ -19,22 +19,21 @@ const gererateOptions = (props) => {
         sources: [{
           src: props.url,
           type: props.type,
-        }],
-        limitPreload: 6,
+        }]
     }
     return videoJsOptions;    
 }
 //title : string, subtitle: string, descripton: Componet for more dec, 
 //  likeNumber, commentNumber, shareNumber : string
 //  onClickHandle : card on Click
-export default function VideoCard2 ({id, title, subtitle, onClickHandle,viewNumber, poster , posterGif, 
+export default function VideoCard2 ({id, title, subtitle, onClickHandle,viewNumber, 
     videoData, time}) {
     const videoViewRef = useRef(null);
     const onPlayHandle = () => {
         videoViewRef.current.removeChild(videoViewRef.current.children[0]);
     }
     return (
-        <div className="cardView" 
+        <div className="cardView4" 
             onClick={() => {
                 if (onClickHandle) onClickHandle();
             }
@@ -44,15 +43,20 @@ export default function VideoCard2 ({id, title, subtitle, onClickHandle,viewNumb
                     <div className="roundedImage" style={{backgroundImage: 'url("https://cdn.logo.com/hotlink-ok/logo-social.png")'}}></div>
                 </div>
                 <div>
+
                     <div className="card-subtitle">
-                        <Link to={`/video/${id}`}>
+                         <Link to={`/video/${id}`}>
                             {subtitle && <span className="subtitle">{subtitle}</span>}
                         </Link>
                     </div>
+
                     <div className="card-row">
+
                         <div className="card-title-title">
                             <span className = "title">{title}</span>
                         </div>
+
+
                         <div className="card-time-time">
                             <span className = "time">{time}</span>
                         </div>
@@ -62,8 +66,10 @@ export default function VideoCard2 ({id, title, subtitle, onClickHandle,viewNumb
             </div>
             <div className="card-body">
                 <Link to={`/video/${id}`} className="video">
-                    <img class="static" src={poster}></img>
-                    <img className="active" src={posterGif}></img>   
+                    <VideoJS onPlayHandle={() => {onPlayHandle()}} options={gererateOptions(videoData)}></VideoJS>
+                    <div ref={videoViewRef} className="videoView" >
+                        <span>{viewNumber}</span>
+                    </div>    
                 </Link>
             </div>
         </div>

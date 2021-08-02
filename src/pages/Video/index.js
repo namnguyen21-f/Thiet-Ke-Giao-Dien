@@ -13,7 +13,7 @@ import SendIcon from '@material-ui/icons/Send';
 import GifIcon from '@material-ui/icons/Gif';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import IconButton from "@material-ui/core/IconButton";
-import VideoCard2 from '../../components/VideoCard2';
+import VideoCard4 from '../../components/VideoCard4';
 //
 import PickerGif from 'react-giphy-picker'
 import Picker from 'emoji-picker-react';
@@ -364,8 +364,8 @@ class VideoPage extends React.Component{
                     {this.state.currentVideo && <VideoCarousel videoArray={this.state.videoCarouselData} currentVideo={this.state.currentVideo}></VideoCarousel>}
                     {this.state.currentVideo && <div className="videoDes">
                             <span className="tag">{this.state.currentVideo.tag || "#tag"}</span>
-                            <h3 className="title">{this.state.currentVideo.title}</h3>
                             <span className="subtitle">{this.state.currentVideo.subtitle}</span>
+                            <h3 className="title">{this.state.currentVideo.title}</h3>
                             <span className="description">10.451 lượt xem - 29 thg 4, 2021</span>
                         </div>
                     }
@@ -405,16 +405,14 @@ class VideoPage extends React.Component{
                         <div className="commentSection">
                             {this.state.commentData && this.state.commentData.map((item, idx) => {
                                 const trace= idx + "";
-                                return <Fragment>
-                                    <CommentItem key={item.id} trace={trace} clName="mainItem" item={item} handleSend={this.handleRespondCmt}></CommentItem>
-                                </Fragment>
+                                return (<CommentItem key={item.id} trace={trace} clName="mainItem" item={item} handleSend={this.handleRespondCmt}></CommentItem>)
                             })}
                         </div>
                     </div>
                 </div>
                 <div className="recommendContainer">
                     {newrecommnendData.map((item) => {
-                        return <VideoCard2 {...item} onFollowHandle={this.followHandleClick}/>
+                        return <VideoCard4 key={item.id} {...item} onFollowHandle={this.followHandleClick}/>
                     })}
                 </div>
             </Container>    
