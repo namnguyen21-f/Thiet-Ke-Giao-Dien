@@ -27,8 +27,8 @@ const gererateOptions = (props) => {
 //title : string, subtitle: string, descripton: Componet for more dec, 
 //  likeNumber, commentNumber, shareNumber : string
 //  onClickHandle : card on Click
-export default function VideoCard2 ({id, title, subtitle, onClickHandle,viewNumber, poster , posterGif, 
-    videoData, time}) {
+export default function VideoCard2 ({id, title, subtitle, onClickHandle,poster , posterGif, 
+    time}) {
     const videoViewRef = useRef(null);
     const onPlayHandle = () => {
         videoViewRef.current.removeChild(videoViewRef.current.children[0]);
