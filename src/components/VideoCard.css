@@ -3,8 +3,8 @@
     margin-left: -.5rem;
     max-width: 1000px;
     position: relative;
-    padding: 2.5rem .75rem;
-    border-bottom: 1px solid rgba(0, 0, 0, .8);
+    padding: 3.5rem .75rem;
+    
 }
 
 .card .card-title{
@@ -34,18 +34,24 @@
 }
 
 .card .card-title .card-title-title > a{
-    color: #04009A;
+    color: #FF4848 !important;
     padding: .875rem 3rem;
     border: 2px solid;
     border-image-slice: 1;
     display: block;
-    border-image-source: linear-gradient(to right, #04009A, #77ACF1);
+    border-image-source: linear-gradient(-45deg, #FF4848, #FFD371);
     font-size: .875rem;
     text-align:justify;
     cursor: pointer;
     user-select: none;
     max-width: 150px;
-    
+    text-align: center;
+}
+
+.card .card-title .card-title-title > a.active{
+    background: linear-gradient(to right, #FF4848, #FFD371);
+    color: #fff !important;
+    border-image-source: unset !important;
 }
 
 .card .card-title .card-title-title div a{

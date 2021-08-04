@@ -1,8 +1,8 @@
 
-import LikeIcon from '../image/LikedIcon.svg';
+import LikeIcon from '../image/LikeIcon.svg';
 import CommentIcon from '../image/CommentIcon.svg';
 import ShareIcon from '../image/ShareIcon.svg';
-import LikedIcon from '../image/LikedIcon.png';
+import LikedIcon from '../image/LikedIcon.svg';
 import './VideoCard.css';
 import VideoJS from './VideoJS';
 import { useState , useRef } from 'react';
@@ -35,7 +35,6 @@ const gererateOptions = (props) => {
 
 export default function VideoCard ({id, title,subtitle, descripton, likeNumber, commentNumber, shareNumber, viewNumber, 
         videoData, isfollow, islike ,onClickHandle , onFollowHandle, onLikeHandle}) {
-    const [isPlay , setIsPlay] = useState(false);
     const videoViewRef = useRef(null);
     const onPlayHandle = () => {
         
@@ -43,9 +42,10 @@ export default function VideoCard ({id, title,subtitle, descripton, likeNumber, 
 
     var state='white'
     var state1='blue';
-    if(isfollow){state='#04009A';state1='white'}
+   
     var like=LikeIcon
     if(islike){like=LikedIcon}
+
     const videoPlayClick = (event) =>{
         event.preventDefault();
     }
@@ -66,7 +66,7 @@ export default function VideoCard ({id, title,subtitle, descripton, likeNumber, 
                             {subtitle && <span className="subtitle">{subtitle}</span>}
                            
                         </div>
-                        <a  style={{backgroundColor:state,color:state1}}onClick={(event) => {onFollowHandle(event,id);}  } >{!isfollow ?  "Follow":"Followed" }</a>
+                        <a className={isfollow ? "active" : "" } onClick={(event) => {onFollowHandle(event,id);}  } >{!isfollow ?  "Follow":"Followed" }</a>
                     </div>
                     {descripton && 
                         <div className="card-title-descripton">
