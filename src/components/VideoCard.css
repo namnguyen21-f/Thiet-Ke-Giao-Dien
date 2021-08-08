@@ -94,13 +94,16 @@
 .card .card-body .videoInteraction div span{
     display: block;
     font-size: 1.2rem;
+    position:relative;
+    right:5px
 }
 
 .card .card-body .videoInteraction div img{
-    width: 40px;
+    width: 40x;
     height: 40px;
     display: block;
-    margin-bottom: 40%;
+    margin-bottom: 30%;
+    margin-right: 15px;   
 }
 
 .card .card-body .video{
