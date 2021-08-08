@@ -338,15 +338,15 @@
     margin-left: .75rem;
 }
 
-.VideoPage .recommendContainer .cardView{
-    border: 0 !important;
+.VideoPage .recommendContainer .cardView4{
+    
 }
 
-.VideoPage .recommendContainer .cardView:nth-of-type(1){
+.VideoPage .recommendContainer .cardView4:nth-of-type(1){
     margin-top: 0 !important;
 }
 
-.VideoPage .recommendContainer .cardView .subtitle{
+.VideoPage .recommendContainer .cardView4 .subtitle{
     font-size: .75rem;
 }
 
