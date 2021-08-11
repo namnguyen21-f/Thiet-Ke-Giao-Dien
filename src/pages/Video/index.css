@@ -272,8 +272,7 @@
 .VideoPage .videoSection .videoDes .title{
     font-weight: 600;
     font-family: sans-serif;
-    line-height: 2rem;
-    color: #212121;
+    line-height: 1.75rem;
     margin-top: 0.5rem;
 }
 
@@ -285,7 +284,7 @@
 
 .VideoPage .videoSection .videoDes .subtitle{
     margin-top: 0.5%;
-    font-size: 2rem;
+    font-size: 1.75rem;
 }
 
 .VideoPage .commentContainer .userComment{
@@ -347,7 +346,7 @@
 }
 
 .VideoPage .recommendContainer .cardView4 .subtitle{
-    font-size: .75rem;
+    font-size: 1.2rem;
 }
 
 .commentContainer .commentInput{
